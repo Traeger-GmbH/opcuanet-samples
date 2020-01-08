@@ -1,81 +1,83 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{81C25810-BA7F-4DA8-8671-9C53CB89244C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client", "sdk\cs\Client\CS_Client.csproj", "{14F06054-7654-4C83-8AD8-0A8D3F81787C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client", "sdk\cs\Client\CS_Client.csproj", "{14F06054-7654-4C83-8AD8-0A8D3F81787C}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client", "sdk\vb\Client\VB_Client.vbproj", "{652F2CD6-B8FF-4170-9CF1-207BE68F6A74}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client", "sdk\vb\Client\VB_Client.vbproj", "{652F2CD6-B8FF-4170-9CF1-207BE68F6A74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.Browsing", "sdk\cs\Client.Browsing\CS_Client.Browsing.csproj", "{E69E2788-B112-4A62-97A3-DD5650DDF60C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.Browsing", "sdk\cs\Client.Browsing\CS_Client.Browsing.csproj", "{E69E2788-B112-4A62-97A3-DD5650DDF60C}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.Browsing", "sdk\vb\Client.Browsing\VB_Client.Browsing.vbproj", "{41DBF476-2783-49DE-85D1-DA9BDF918D81}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.Browsing", "sdk\vb\Client.Browsing\VB_Client.Browsing.vbproj", "{41DBF476-2783-49DE-85D1-DA9BDF918D81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{98B4B0ED-D60F-4D64-B4E5-02464BBB882D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.ConfiguredViaXml", "sdk\cs\Client.ConfiguredViaXml\CS_Client.ConfiguredViaXml.csproj", "{F77F9A22-EA25-4F28-A4BF-AF6EDFF5ACDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.ConfiguredViaXml", "sdk\cs\Client.ConfiguredViaXml\CS_Client.ConfiguredViaXml.csproj", "{F77F9A22-EA25-4F28-A4BF-AF6EDFF5ACDB}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.ConfiguredViaXml", "sdk\vb\Client.ConfiguredViaXml\VB_Client.ConfiguredViaXml.vbproj", "{57286054-B904-4C5B-95D7-E983C00B90EC}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.ConfiguredViaXml", "sdk\vb\Client.ConfiguredViaXml\VB_Client.ConfiguredViaXml.vbproj", "{57286054-B904-4C5B-95D7-E983C00B90EC}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.ConfiguredViaCode", "sdk\vb\Client.ConfiguredViaCode\VB_Client.ConfiguredViaCode.vbproj", "{F9F0094E-453A-4A6A-AD4B-23DFBDB0B807}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.ConfiguredViaCode", "sdk\vb\Client.ConfiguredViaCode\VB_Client.ConfiguredViaCode.vbproj", "{F9F0094E-453A-4A6A-AD4B-23DFBDB0B807}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.ConfiguredViaCode", "sdk\cs\Client.ConfiguredViaCode\CS_Client.ConfiguredViaCode.csproj", "{D82F6DAC-01C4-40B4-984A-503563713A98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.ConfiguredViaCode", "sdk\cs\Client.ConfiguredViaCode\CS_Client.ConfiguredViaCode.csproj", "{D82F6DAC-01C4-40B4-984A-503563713A98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.Authentication", "sdk\cs\Client.Authentication\CS_Client.Authentication.csproj", "{BE997438-7941-45BE-9096-B89AEE12D127}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.Authentication", "sdk\cs\Client.Authentication\CS_Client.Authentication.csproj", "{BE997438-7941-45BE-9096-B89AEE12D127}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.Authentication", "sdk\vb\Client.Authentication\VB_Client.Authentication.vbproj", "{7D2A7FE1-0C22-442F-8A0D-C728071E2EFE}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.Authentication", "sdk\vb\Client.Authentication\VB_Client.Authentication.vbproj", "{7D2A7FE1-0C22-442F-8A0D-C728071E2EFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server", "sdk\cs\Server\CS_Server.csproj", "{F98B0C0D-CEFD-412E-A79B-B34E66CF34E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server", "sdk\cs\Server\CS_Server.csproj", "{F98B0C0D-CEFD-412E-A79B-B34E66CF34E9}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server", "sdk\vb\Server\VB_Server.vbproj", "{E37E8B26-CE43-4211-ADED-C40B9412DC4D}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server", "sdk\vb\Server\VB_Server.vbproj", "{E37E8B26-CE43-4211-ADED-C40B9412DC4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server.ConfiguredViaCode", "sdk\cs\Server.ConfiguredViaCode\CS_Server.ConfiguredViaCode.csproj", "{75D789E5-BDA5-41F8-847F-1B11C8C3BF07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.ConfiguredViaCode", "sdk\cs\Server.ConfiguredViaCode\CS_Server.ConfiguredViaCode.csproj", "{75D789E5-BDA5-41F8-847F-1B11C8C3BF07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server.ConfiguredViaXml", "sdk\cs\Server.ConfiguredViaXml\CS_Server.ConfiguredViaXml.csproj", "{FEDA8EC3-F9C2-4D88-91B1-54A47B9AF4A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.ConfiguredViaXml", "sdk\cs\Server.ConfiguredViaXml\CS_Server.ConfiguredViaXml.csproj", "{FEDA8EC3-F9C2-4D88-91B1-54A47B9AF4A6}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server.ConfiguredViaCode", "sdk\vb\Server.ConfiguredViaCode\VB_Server.ConfiguredViaCode.vbproj", "{298FBEAC-9522-44F1-9772-5916C55D125B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.ConfiguredViaCode", "sdk\vb\Server.ConfiguredViaCode\VB_Server.ConfiguredViaCode.vbproj", "{298FBEAC-9522-44F1-9772-5916C55D125B}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server.ConfiguredViaXml", "sdk\vb\Server.ConfiguredViaXml\VB_Server.ConfiguredViaXml.vbproj", "{DE6B8A7B-1970-43D0-9EE5-FD580A4B8CA4}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.ConfiguredViaXml", "sdk\vb\Server.ConfiguredViaXml\VB_Server.ConfiguredViaXml.vbproj", "{DE6B8A7B-1970-43D0-9EE5-FD580A4B8CA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server.Authentication", "sdk\cs\Server.Authentication\CS_Server.Authentication.csproj", "{D6DFAAA2-6169-4ED8-AE25-C0F6987EEF3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.Authentication", "sdk\cs\Server.Authentication\CS_Server.Authentication.csproj", "{D6DFAAA2-6169-4ED8-AE25-C0F6987EEF3A}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server.Authentication", "sdk\vb\Server.Authentication\VB_Server.Authentication.vbproj", "{D04E86D0-BADB-453C-9142-FD63B8716FD7}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.Authentication", "sdk\vb\Server.Authentication\VB_Server.Authentication.vbproj", "{D04E86D0-BADB-453C-9142-FD63B8716FD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.HDA", "sdk\cs\Client.HDA\CS_Client.HDA.csproj", "{BEB302A4-5127-4FD4-8D00-C23F81D9AB9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.HDA", "sdk\cs\Client.HDA\CS_Client.HDA.csproj", "{BEB302A4-5127-4FD4-8D00-C23F81D9AB9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server.HDA", "sdk\cs\Server.HDA\CS_Server.HDA.csproj", "{10021378-4DB2-406F-948B-DC7E6EDB6CF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.HDA", "sdk\cs\Server.HDA\CS_Server.HDA.csproj", "{10021378-4DB2-406F-948B-DC7E6EDB6CF9}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.HDA", "sdk\vb\Client.HDA\VB_Client.HDA.vbproj", "{20A4F074-6742-4193-8F6D-42FA211A3192}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.HDA", "sdk\vb\Client.HDA\VB_Client.HDA.vbproj", "{20A4F074-6742-4193-8F6D-42FA211A3192}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server.HDA", "sdk\vb\Server.HDA\VB_Server.HDA.vbproj", "{40DE1A66-0883-425D-862F-6DCD721F6B29}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.HDA", "sdk\vb\Server.HDA\VB_Server.HDA.vbproj", "{40DE1A66-0883-425D-862F-6DCD721F6B29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nodes", "Nodes", "{AA959C0B-D609-47FC-B223-ABCF3E164A33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.AnalogItemNode", "sdk\cs\Client.AnalogItemNode\CS_Client.AnalogItemNode.csproj", "{42F4D9B5-5695-4319-836F-5B9649F48294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.AnalogItemNode", "sdk\cs\Client.AnalogItemNode\CS_Client.AnalogItemNode.csproj", "{42F4D9B5-5695-4319-836F-5B9649F48294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server.AnalogItemNode", "sdk\cs\Server.AnalogItemNode\CS_Server.AnalogItemNode.csproj", "{E62E85E0-73D8-45A5-9B60-93DFEA69BCCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.AnalogItemNode", "sdk\cs\Server.AnalogItemNode\CS_Server.AnalogItemNode.csproj", "{E62E85E0-73D8-45A5-9B60-93DFEA69BCCF}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.AnalogItemNode", "sdk\vb\Client.AnalogItemNode\VB_Client.AnalogItemNode.vbproj", "{49CC38BF-3FBC-4F0E-9196-00C357A36C7A}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.AnalogItemNode", "sdk\vb\Client.AnalogItemNode\VB_Client.AnalogItemNode.vbproj", "{49CC38BF-3FBC-4F0E-9196-00C357A36C7A}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server.AnalogItemNode", "sdk\vb\Server.AnalogItemNode\VB_Server.AnalogItemNode.vbproj", "{281F1446-EA1A-41A5-95AB-B8EC083DEDE9}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.AnalogItemNode", "sdk\vb\Server.AnalogItemNode\VB_Server.AnalogItemNode.vbproj", "{281F1446-EA1A-41A5-95AB-B8EC083DEDE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.DataTypeNode", "sdk\cs\Client.DataTypeNode\CS_Client.DataTypeNode.csproj", "{64CC08C6-5BD4-497D-8DD6-58786CB3D44C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.DataTypeNode", "sdk\cs\Client.DataTypeNode\CS_Client.DataTypeNode.csproj", "{64CC08C6-5BD4-497D-8DD6-58786CB3D44C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server.DataTypeNode", "sdk\cs\Server.DataTypeNode\CS_Server.DataTypeNode.csproj", "{6A4BC310-AAF7-41A7-9CCF-E4AB4ACEF664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.DataTypeNode", "sdk\cs\Server.DataTypeNode\CS_Server.DataTypeNode.csproj", "{6A4BC310-AAF7-41A7-9CCF-E4AB4ACEF664}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.DataTypeNode", "sdk\vb\Client.DataTypeNode\VB_Client.DataTypeNode.vbproj", "{9B027B93-E317-4FE0-9A9B-96991744C988}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.DataTypeNode", "sdk\vb\Client.DataTypeNode\VB_Client.DataTypeNode.vbproj", "{9B027B93-E317-4FE0-9A9B-96991744C988}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server.DataTypeNode", "sdk\vb\Server.DataTypeNode\VB_Server.DataTypeNode.vbproj", "{863AEAEC-BCD3-4419-9F31-13F95C497339}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.DataTypeNode", "sdk\vb\Server.DataTypeNode\VB_Server.DataTypeNode.vbproj", "{863AEAEC-BCD3-4419-9F31-13F95C497339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Client.AE", "sdk\cs\Client.AE\CS_Client.AE.csproj", "{BB5AB8C7-7F62-45EF-B066-6358B0737F99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.AE", "sdk\cs\Client.AE\CS_Client.AE.csproj", "{BB5AB8C7-7F62-45EF-B066-6358B0737F99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Server.AE", "sdk\cs\Server.AE\CS_Server.AE.csproj", "{3A20274D-C030-4D99-AA28-798A39313F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.AE", "sdk\cs\Server.AE\CS_Server.AE.csproj", "{3A20274D-C030-4D99-AA28-798A39313F0D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Client.AE", "sdk\vb\Client.AE\VB_Client.AE.vbproj", "{276FB68B-F7BE-47CC-AF5D-CA2D7E289110}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.AE", "sdk\vb\Client.AE\VB_Client.AE.vbproj", "{276FB68B-F7BE-47CC-AF5D-CA2D7E289110}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_Server.AE", "sdk\vb\Server.AE\VB_Server.AE.vbproj", "{474FCB25-1D05-45D6-B522-37015621DEEE}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.AE", "sdk\vb\Server.AE\VB_Server.AE.vbproj", "{474FCB25-1D05-45D6-B522-37015621DEEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDK", "SDK", "{14641364-AC3C-4BEB-9592-1D56613107BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -224,10 +226,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{81C25810-BA7F-4DA8-8671-9C53CB89244C} = {14641364-AC3C-4BEB-9592-1D56613107BF}
 		{14F06054-7654-4C83-8AD8-0A8D3F81787C} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{652F2CD6-B8FF-4170-9CF1-207BE68F6A74} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{E69E2788-B112-4A62-97A3-DD5650DDF60C} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{41DBF476-2783-49DE-85D1-DA9BDF918D81} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
+		{98B4B0ED-D60F-4D64-B4E5-02464BBB882D} = {14641364-AC3C-4BEB-9592-1D56613107BF}
 		{F77F9A22-EA25-4F28-A4BF-AF6EDFF5ACDB} = {98B4B0ED-D60F-4D64-B4E5-02464BBB882D}
 		{57286054-B904-4C5B-95D7-E983C00B90EC} = {98B4B0ED-D60F-4D64-B4E5-02464BBB882D}
 		{F9F0094E-453A-4A6A-AD4B-23DFBDB0B807} = {98B4B0ED-D60F-4D64-B4E5-02464BBB882D}
@@ -246,6 +250,7 @@ Global
 		{10021378-4DB2-406F-948B-DC7E6EDB6CF9} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{20A4F074-6742-4193-8F6D-42FA211A3192} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{40DE1A66-0883-425D-862F-6DCD721F6B29} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
+		{AA959C0B-D609-47FC-B223-ABCF3E164A33} = {14641364-AC3C-4BEB-9592-1D56613107BF}
 		{42F4D9B5-5695-4319-836F-5B9649F48294} = {AA959C0B-D609-47FC-B223-ABCF3E164A33}
 		{E62E85E0-73D8-45A5-9B60-93DFEA69BCCF} = {AA959C0B-D609-47FC-B223-ABCF3E164A33}
 		{49CC38BF-3FBC-4F0E-9196-00C357A36C7A} = {AA959C0B-D609-47FC-B223-ABCF3E164A33}
