@@ -20,4 +20,4 @@ The samples are implemented to use them quite headless with an absolute minimum 
 You may just browse the samples and copy the code snippets required into your own [spike](https://en.wikipedia.org/wiki/Spike_(software_development)). As soon as your spike fulfils your needs you may think about to offer a pull request for the project here.
 
 ### Clone, Open & Run
-As usual you can just clone this repository, open one of the solutions / projects, set the project of your interest as the "Startup Project" (via right-click on the project) and hit F5 (or click the "green arrow" - play-button).
+As usual you can just clone this repository, open one of the solutions/projects, set the project of your interest as the "Startup Project" (via right-click on the project) and hit F5 (or click the "green arrow" - play-button).
