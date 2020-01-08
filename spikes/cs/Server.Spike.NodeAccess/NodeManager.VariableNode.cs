@@ -8,14 +8,23 @@ namespace NodeAccess
     {
         private class VariableNode<T> : OpcDataVariableNode<T>
         {
+            #region ---------- Private readonly fields ----------
+
             private readonly NodeManager manager;
 
+            #endregion
+
+            #region ---------- Public constructors ----------
 
             public VariableNode(NodeManager manager, IOpcNode parent, OpcName name, T value)
                 : base(parent, name, value)
             {
                 this.manager = manager;
             }
+
+            #endregion
+
+            #region ---------- Protected methods ----------
 
             protected override OpcAttributeValue<TAttribute> ReadAttributeValueCore<TAttribute>(
                     OpcReadAttributeValueContext context,
@@ -49,6 +58,8 @@ namespace NodeAccess
 
                 return base.ReadAttributeValueCore(context, value);
             }
+
+            #endregion
         }
     }
 }
