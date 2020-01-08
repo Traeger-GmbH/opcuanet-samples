@@ -43,6 +43,10 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.AE", "sdk\vb\Serv
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDK", "SDK", "{32E3AB6B-47CD-48C5-897B-DA1562DDCFD5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spikes", "Spikes", "{045F797D-F08B-4F34-A223-10D101277AFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.Spike.NodeAccess", "spikes\cs\Server.Spike.NodeAccess\CS_Server.Spike.NodeAccess.csproj", "{7B91EB57-E54D-47EF-B214-DF36CD6AA219}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +117,10 @@ Global
 		{474FCB25-1D05-45D6-B522-37015621DEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{474FCB25-1D05-45D6-B522-37015621DEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{474FCB25-1D05-45D6-B522-37015621DEEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B91EB57-E54D-47EF-B214-DF36CD6AA219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B91EB57-E54D-47EF-B214-DF36CD6AA219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B91EB57-E54D-47EF-B214-DF36CD6AA219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B91EB57-E54D-47EF-B214-DF36CD6AA219}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +145,7 @@ Global
 		{863AEAEC-BCD3-4419-9F31-13F95C497339} = {AA959C0B-D609-47FC-B223-ABCF3E164A33}
 		{3A20274D-C030-4D99-AA28-798A39313F0D} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{474FCB25-1D05-45D6-B522-37015621DEEE} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
+		{7B91EB57-E54D-47EF-B214-DF36CD6AA219} = {045F797D-F08B-4F34-A223-10D101277AFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
