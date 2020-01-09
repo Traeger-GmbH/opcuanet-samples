@@ -39,7 +39,7 @@ namespace NodeAccess
                 // provide the according user dependent metadata for the UserAccessLevel and
                 // UserWriteAccess attributes as well.
                 if (attribute == OpcAttribute.UserAccessLevel || attribute == OpcAttribute.UserWriteAccess) {
-                    if (!this.manager.CanWrite(context.Identity)) {
+                    if (!this.manager.CanWrite(this, context.Identity)) {
                         if (value is OpcAttributeValue<OpcAccessLevel> accessLevel) {
                             accessLevel = new OpcAttributeValue<OpcAccessLevel>(
                                     value.Attribute, accessLevel.Value & ~OpcAccessLevel.CurrentWrite);
@@ -57,6 +57,26 @@ namespace NodeAccess
                 }
 
                 return base.ReadAttributeValueCore(context, value);
+            }
+
+            protected override OpcAttributeValue<TAttribute> WriteAttributeValueCore<TAttribute>(
+                    OpcWriteAttributeValueContext context,
+                    OpcAttributeValue<TAttribute> value)
+            {
+                if (!this.manager.CanWrite(this, context.Identity))
+                    throw new OpcException(OpcStatusCode.BadNotWritable);
+
+                return base.WriteAttributeValueCore(context, value);
+            }
+
+            protected override OpcVariableValue<object> WriteVariableValueCore(
+                    OpcWriteVariableValueContext context,
+                    OpcVariableValue<object> value)
+            {
+                if (!this.manager.CanWrite(this, context.Identity))
+                    throw new OpcException(OpcStatusCode.BadNotWritable);
+
+                return base.WriteVariableValueCore(context, value);
             }
 
             #endregion

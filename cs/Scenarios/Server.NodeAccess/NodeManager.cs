@@ -30,14 +30,16 @@ namespace NodeAccess
 
         #region ---------- Internal methods ----------
 
-        internal bool CanWrite(OpcUserIdentity sessionIdentity)
+        internal bool CanWrite(OpcVariableNode node, OpcUserIdentity sessionIdentity)
         {
             var entries = this.AccessControl.Entries;
 
             foreach (var entry in entries) {
-                if (entry.Principal.Identity is OpcUserIdentity serverIdentity) {
-                    if (serverIdentity.DisplayName == sessionIdentity.DisplayName)
-                        return entry.IsAllowed(OpcRequestType.Write);
+                if (entry.Principal.Identity is SystemIdentity serverIdentity) {
+                    if (serverIdentity.DisplayName == sessionIdentity.DisplayName) {
+                        return entry.IsAllowed(OpcRequestType.Write)
+                                && serverIdentity.IsAllowed(node.Id.ValueAsString);
+                    }
                 }
             }
 
@@ -50,13 +52,17 @@ namespace NodeAccess
 
         protected override IEnumerable<IOpcNode> CreateNodes(OpcNodeReferenceCollection references)
         {
-            var folderNode = new OpcFolderNode(this.DefaultNamespace.GetName("Folder"));
+            var machineNode = new OpcObjectNode(this.DefaultNamespace.GetName("Machine"));
 
-            new VariableNode<int>(this, folderNode, "Var01", value: 42);
-            new VariableNode<string>(this, folderNode, "Var02", value: "Hello World");
+            new VariableNode<int>(this, machineNode, "Status", value: 42);
+            new VariableNode<string>(this, machineNode, "Job", value: "JOB-0543");
 
-            references.Add(folderNode, OpcObjectTypes.ObjectsFolder);
-            return new IOpcNode[] { folderNode };
+            new VariableNode<bool>(this, machineNode, "Shutdown", value: false);
+            new VariableNode<short>(this, machineNode, "Speed", value: 1000);
+            new VariableNode<string>(this, machineNode, "Tooling", value: "cutter");
+
+            references.Add(machineNode, OpcObjectTypes.ObjectsFolder);
+            return new IOpcNode[] { machineNode };
         }
 
         #endregion

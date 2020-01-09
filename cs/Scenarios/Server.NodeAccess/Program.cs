@@ -21,10 +21,15 @@ namespace NodeAccess
                 var users = server.Security.UserNameAcl;
 
                 // 1. Add the users to the UserName-ACL.
-                var admin = users.AddEntry("Admin", "admin");
-                var user = users.AddEntry("User", "user");
+                var admin = users.AddEntry(new SystemIdentity("Admin", "admin"));
+                var user = users.AddEntry(new SystemIdentity("User", "user"));
 
-                // 2. Setup the user privileges accordingly.
+                var support = users.AddEntry(new SystemIdentity("Support", "support")
+                        .Deny("Machine/Shutdown")
+                        .Deny("Machine/Speed")
+                        .Deny("Machine/Tooling"));
+
+                // 2. Setup the global user privileges accordingly.
                 user.Deny(OpcRequestType.Write);
 
                 // 3. Activate the UserName-ACL (this inline disables anonymous access).
