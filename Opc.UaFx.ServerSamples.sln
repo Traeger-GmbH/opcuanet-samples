@@ -49,6 +49,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.Spike.NodeAccess"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.Spike.NodeAccess", "spikes\vb\Server.Spike.NodeAccess\VB_Server.Spike.NodeAccess.vbproj", "{F16C8734-77D5-4CC9-966A-859AE71A8D6D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.Spike.Temperature", "spikes\cs\Server.Spike.Temperature\CS_Server.Spike.Temperature.csproj", "{44311978-B288-4C10-91B9-2B14ED5B6D68}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.Spike.Temperature", "spikes\vb\Server.Spike.Temperature\VB_Server.Spike.Temperature.vbproj", "{ADD4C606-3BE7-4A80-9E57-D1B3E75736F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +131,14 @@ Global
 		{F16C8734-77D5-4CC9-966A-859AE71A8D6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F16C8734-77D5-4CC9-966A-859AE71A8D6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F16C8734-77D5-4CC9-966A-859AE71A8D6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44311978-B288-4C10-91B9-2B14ED5B6D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44311978-B288-4C10-91B9-2B14ED5B6D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44311978-B288-4C10-91B9-2B14ED5B6D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44311978-B288-4C10-91B9-2B14ED5B6D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD4C606-3BE7-4A80-9E57-D1B3E75736F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD4C606-3BE7-4A80-9E57-D1B3E75736F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD4C606-3BE7-4A80-9E57-D1B3E75736F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD4C606-3BE7-4A80-9E57-D1B3E75736F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,6 +165,8 @@ Global
 		{474FCB25-1D05-45D6-B522-37015621DEEE} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{7B91EB57-E54D-47EF-B214-DF36CD6AA219} = {045F797D-F08B-4F34-A223-10D101277AFE}
 		{F16C8734-77D5-4CC9-966A-859AE71A8D6D} = {045F797D-F08B-4F34-A223-10D101277AFE}
+		{44311978-B288-4C10-91B9-2B14ED5B6D68} = {045F797D-F08B-4F34-A223-10D101277AFE}
+		{ADD4C606-3BE7-4A80-9E57-D1B3E75736F7} = {045F797D-F08B-4F34-A223-10D101277AFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}

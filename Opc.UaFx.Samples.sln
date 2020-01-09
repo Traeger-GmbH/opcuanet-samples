@@ -85,6 +85,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.Spike.NodeAccess"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.Spike.NodeAccess", "spikes\vb\Server.Spike.NodeAccess\VB_Server.Spike.NodeAccess.vbproj", "{60F172DD-F99D-487A-9515-F60D3576663A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Server.Spike.Temperature", "spikes\cs\Server.Spike.Temperature\CS_Server.Spike.Temperature.csproj", "{4E5A486E-7BE5-42D8-8D5F-0BA5A8D2F09C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Client.Spike.Temperature", "spikes\cs\Client.Spike.Temperature\CS_Client.Spike.Temperature.csproj", "{674D8448-34BA-4F5D-813C-982CE99DC039}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Client.Spike.Temperature", "spikes\vb\Client.Spike.Temperature\VB_Client.Spike.Temperature.vbproj", "{44E54176-7636-4345-93B6-B555D259C6D3}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB_Server.Spike.Temperature", "spikes\vb\Server.Spike.Temperature\VB_Server.Spike.Temperature.vbproj", "{8CB18476-FF5F-4577-B31F-63D8875C0FE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -235,6 +243,22 @@ Global
 		{60F172DD-F99D-487A-9515-F60D3576663A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60F172DD-F99D-487A-9515-F60D3576663A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60F172DD-F99D-487A-9515-F60D3576663A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5A486E-7BE5-42D8-8D5F-0BA5A8D2F09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5A486E-7BE5-42D8-8D5F-0BA5A8D2F09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5A486E-7BE5-42D8-8D5F-0BA5A8D2F09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5A486E-7BE5-42D8-8D5F-0BA5A8D2F09C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674D8448-34BA-4F5D-813C-982CE99DC039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674D8448-34BA-4F5D-813C-982CE99DC039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674D8448-34BA-4F5D-813C-982CE99DC039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674D8448-34BA-4F5D-813C-982CE99DC039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44E54176-7636-4345-93B6-B555D259C6D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E54176-7636-4345-93B6-B555D259C6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E54176-7636-4345-93B6-B555D259C6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E54176-7636-4345-93B6-B555D259C6D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB18476-FF5F-4577-B31F-63D8875C0FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB18476-FF5F-4577-B31F-63D8875C0FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB18476-FF5F-4577-B31F-63D8875C0FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB18476-FF5F-4577-B31F-63D8875C0FE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -279,6 +303,10 @@ Global
 		{474FCB25-1D05-45D6-B522-37015621DEEE} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{30F2971E-3BFD-4F33-AAE3-6DEB97B43AA2} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{60F172DD-F99D-487A-9515-F60D3576663A} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{4E5A486E-7BE5-42D8-8D5F-0BA5A8D2F09C} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{674D8448-34BA-4F5D-813C-982CE99DC039} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{44E54176-7636-4345-93B6-B555D259C6D3} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{8CB18476-FF5F-4577-B31F-63D8875C0FE8} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
