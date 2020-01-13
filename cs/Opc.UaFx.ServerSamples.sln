@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Temperature", "Scena
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.ClientAddedNodesWithHistory", "Scenarios\Server.ClientAddedNodesWithHistory\Server.ClientAddedNodesWithHistory.csproj", "{CBB08182-90FD-45DA-9EBA-957C13F2D4ED}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.RecursiveSubscription", "Scenarios\Server.RecursiveSubscription\Server.RecursiveSubscription.csproj", "{EA1FF01F-8515-40E8-BEBB-9A622764C3EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{CBB08182-90FD-45DA-9EBA-957C13F2D4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBB08182-90FD-45DA-9EBA-957C13F2D4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBB08182-90FD-45DA-9EBA-957C13F2D4ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA1FF01F-8515-40E8-BEBB-9A622764C3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1FF01F-8515-40E8-BEBB-9A622764C3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1FF01F-8515-40E8-BEBB-9A622764C3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1FF01F-8515-40E8-BEBB-9A622764C3EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{C795BF79-58CF-484D-A246-97719AD54E56} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{04EA53BF-0EE5-46BE-AF98-93DCFD1DBAE9} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{CBB08182-90FD-45DA-9EBA-957C13F2D4ED} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{EA1FF01F-8515-40E8-BEBB-9A622764C3EA} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
