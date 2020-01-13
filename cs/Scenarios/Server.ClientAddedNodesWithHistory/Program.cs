@@ -19,6 +19,8 @@ namespace ClientAddedNodesWithHistory
 
             using (var server = new OpcServer("opc.tcp://localhost:4840/", manager)) {
                 server.Start();
+
+                Console.WriteLine("Server started - press any key to exit.");
                 Console.ReadKey(true);
             }
         }
