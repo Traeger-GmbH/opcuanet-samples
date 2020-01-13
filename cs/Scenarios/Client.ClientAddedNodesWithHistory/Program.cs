@@ -1,4 +1,4 @@
-﻿namespace Client
+﻿namespace ClientAddedNodesWithHistory
 {
     using System;
 
