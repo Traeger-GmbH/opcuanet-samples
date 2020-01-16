@@ -39,6 +39,8 @@ namespace NodeAccess
                 manager.AccessControl = users;
 
                 server.Start();
+
+                Console.WriteLine("Server started - press any key to exit.");
                 Console.ReadKey(true);
             }
         }

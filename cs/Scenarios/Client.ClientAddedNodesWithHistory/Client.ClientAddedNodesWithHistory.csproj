@@ -2,10 +2,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net46;net471;netcoreapp2.1</TargetFrameworks>
-    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Advanced" Version="2.8.2.1" />
+    <PackageReference Include="Opc.UaFx.Client" Version="2.8.2.1" />
   </ItemGroup>
 </Project>
