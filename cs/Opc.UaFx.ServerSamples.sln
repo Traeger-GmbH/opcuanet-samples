@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.RecursiveSubscriptio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Playground", "Scenarios\Server.Playground\Server.Playground.csproj", "{45538FB6-1AAC-45CF-942F-2BC152FBF2D8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.DynamicNodes", "Scenarios\Server.DynamicNodes\Server.DynamicNodes.csproj", "{29953B53-A612-4266-918B-D7A66F3CAB77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{45538FB6-1AAC-45CF-942F-2BC152FBF2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45538FB6-1AAC-45CF-942F-2BC152FBF2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45538FB6-1AAC-45CF-942F-2BC152FBF2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29953B53-A612-4266-918B-D7A66F3CAB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29953B53-A612-4266-918B-D7A66F3CAB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29953B53-A612-4266-918B-D7A66F3CAB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29953B53-A612-4266-918B-D7A66F3CAB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{CBB08182-90FD-45DA-9EBA-957C13F2D4ED} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{EA1FF01F-8515-40E8-BEBB-9A622764C3EA} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{45538FB6-1AAC-45CF-942F-2BC152FBF2D8} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{29953B53-A612-4266-918B-D7A66F3CAB77} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
