@@ -17,7 +17,7 @@ function Invoke-Bootstrap()
     Submit-Package -Name System.Reflection.DispatchProxy -Version 4.5.0 -Framework netstandard2.0
     Submit-Package -Name System.ServiceModel.Primitives -Version 4.5.3 -Framework netstandard2.0
     Submit-Package -Name System.Private.ServiceModel -Version 4.5.3 -Framework netstandard2.0
-    Submit-Package -Name Opc.UaFx.Client -Version 2.8.3.1 -Framework netstandard2.0
+    Submit-Package -Name Opc.UaFx.Client -Version 2.9.0 -Framework netstandard2.0
 
     if (!$Silent) {
         Write-Host ""

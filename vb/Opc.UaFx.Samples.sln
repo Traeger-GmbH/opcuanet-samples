@@ -51,6 +51,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeAccess", "Scenar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Temperature", "Scenarios\Server.Temperature\Server.Temperature.vbproj", "{04EA53BF-0EE5-46BE-AF98-93DCFD1DBAE9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{CA407324-E5EC-4D9D-802C-249C76EAC43E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Client.Wpf", "Platforms\Client.Wpf\Client.Wpf.vbproj", "{6AADF59F-7255-42BD-899F-EA4E61372DA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,6 +141,10 @@ Global
 		{04EA53BF-0EE5-46BE-AF98-93DCFD1DBAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04EA53BF-0EE5-46BE-AF98-93DCFD1DBAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04EA53BF-0EE5-46BE-AF98-93DCFD1DBAE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AADF59F-7255-42BD-899F-EA4E61372DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AADF59F-7255-42BD-899F-EA4E61372DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AADF59F-7255-42BD-899F-EA4E61372DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AADF59F-7255-42BD-899F-EA4E61372DA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +170,7 @@ Global
 		{29119D0B-F066-43D7-906D-D9B4863461AC} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{C795BF79-58CF-484D-A246-97719AD54E56} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{04EA53BF-0EE5-46BE-AF98-93DCFD1DBAE9} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{6AADF59F-7255-42BD-899F-EA4E61372DA6} = {CA407324-E5EC-4D9D-802C-249C76EAC43E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
