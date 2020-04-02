@@ -15,7 +15,6 @@ try {
     $client.Connect()
     
     while ($true) {
-        # ns=2;s=Temperature
         $temperature = $client.ReadNode("ns=2;s=Temperature");
         Write-Host "Current Temperature is $temperature degree celsius" -ForegroundColor DarkGray
 
