@@ -19,7 +19,7 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateKeyFile>C:\Dev\OPC-UA Samples %28GitHub%29\cs\Platforms\Client.Uwp\Client.Uwp\Client.Uwp_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>C:\Dev\OPC-UA Samples %28GitHub%29\cs\Platforms\Client.Uwp\Client.Uwp_TemporaryKey.pfx</PackageCertificateKeyFile>
     <PackageCertificateThumbprint>32A90483AFBC9CA3C609823A52512236AD721ACE</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
