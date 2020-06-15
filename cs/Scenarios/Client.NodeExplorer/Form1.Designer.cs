@@ -79,11 +79,10 @@
             this.nodesImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("nodesImageList.ImageStream")));
             this.nodesImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.nodesImageList.Images.SetKeyName(0, "ObjectNode.png");
-            this.nodesImageList.Images.SetKeyName(1, "MethodNode.png");
-            this.nodesImageList.Images.SetKeyName(2, "VariableNode.png");
-            this.nodesImageList.Images.SetKeyName(3, "FolderNode.png");
-            this.nodesImageList.Images.SetKeyName(4, "FileNode.png");
-            this.nodesImageList.Images.SetKeyName(5, "PropertyNode.png");
+            this.nodesImageList.Images.SetKeyName(1, "FolderNode.png");
+            this.nodesImageList.Images.SetKeyName(2, "MethodNode.png");
+            this.nodesImageList.Images.SetKeyName(3, "VariableNode.png");
+            this.nodesImageList.Images.SetKeyName(4, "PropertyNode.png");
             // 
             // nodesTreeView
             // 

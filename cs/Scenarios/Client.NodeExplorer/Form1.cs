@@ -58,18 +58,16 @@ namespace Client.NodeExplorer
                     treeNode.ImageIndex = 0;
 
                     if (node.Reference.TypeDefinitionId == Opc.Ua.ObjectTypeIds.FolderType)
-                        treeNode.ImageIndex = 3;
-                    if (node.Reference.TypeDefinitionId == Opc.Ua.ObjectTypeIds.FileType)
-                        treeNode.ImageIndex = 4;
+                        treeNode.ImageIndex = 1;
                 }
                 else if (node is OpcMethodNodeInfo) {
-                    treeNode.ImageIndex = 1;
+                    treeNode.ImageIndex = 2;
                 }
                 else if (node is OpcVariableNodeInfo) {
-                    treeNode.ImageIndex = 2;
+                    treeNode.ImageIndex = 3;
 
-                    if (node.Reference.TypeDefinitionId == Opc.Ua.VariableTypeIds.PropertyType)
-                        treeNode.ImageIndex = 5;
+                    if (node.Reference.ReferenceType == OpcReferenceType.HasProperty)
+                        treeNode.ImageIndex = 4;
                 }
 
                 treeNode.Tag = node;
