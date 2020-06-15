@@ -52,11 +52,26 @@ namespace Client.NodeExplorer
             var result = false;
 
             try {
-                // Remove an existing 'Browsing...' node.
-                if (treeNodes.Count == 1 && treeNodes[0].Tag == null)
-                    treeNodes.Clear();
-
                 var treeNode = treeNodes.Add(node.DisplayName.Value);
+
+                if (node is OpcObjectNodeInfo) {
+                    treeNode.ImageIndex = 0;
+
+                    if (node.Reference.TypeDefinitionId == Opc.Ua.ObjectTypeIds.FolderType)
+                        treeNode.ImageIndex = 3;
+                    if (node.Reference.TypeDefinitionId == Opc.Ua.ObjectTypeIds.FileType)
+                        treeNode.ImageIndex = 4;
+                }
+                else if (node is OpcMethodNodeInfo) {
+                    treeNode.ImageIndex = 1;
+                }
+                else if (node is OpcVariableNodeInfo) {
+                    treeNode.ImageIndex = 2;
+
+                    if (node.Reference.TypeDefinitionId == Opc.Ua.VariableTypeIds.PropertyType)
+                        treeNode.ImageIndex = 5;
+                }
+
                 treeNode.Tag = node;
 
                 treeNode.Nodes.Add("Browsing...");
@@ -103,15 +118,12 @@ namespace Client.NodeExplorer
         {
             if (e.Node.Tag is OpcNodeInfo node) {
                 var treeNodes = e.Node.Nodes;
+                treeNodes.Clear();
 
                 foreach (var childNode in node.Children()) {
                     if (!this.Browse(childNode, treeNodes))
                         break;
                 }
-
-                // Remove an existing 'Browsing...' node.
-                if (treeNodes.Count == 1 && treeNodes[0].Tag == null)
-                    treeNodes.Clear();
             }
         }
 

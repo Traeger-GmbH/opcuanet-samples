@@ -27,6 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.nodesImageList = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.serverAddressTextBox = new System.Windows.Forms.TextBox();
             this.connectButton = new System.Windows.Forms.Button();
@@ -71,15 +74,30 @@
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.HandleConnectButtonClick);
             // 
+            // nodesImageList
+            // 
+            this.nodesImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("nodesImageList.ImageStream")));
+            this.nodesImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.nodesImageList.Images.SetKeyName(0, "ObjectNode.png");
+            this.nodesImageList.Images.SetKeyName(1, "MethodNode.png");
+            this.nodesImageList.Images.SetKeyName(2, "VariableNode.png");
+            this.nodesImageList.Images.SetKeyName(3, "FolderNode.png");
+            this.nodesImageList.Images.SetKeyName(4, "FileNode.png");
+            this.nodesImageList.Images.SetKeyName(5, "PropertyNode.png");
+            // 
             // nodesTreeView
             // 
             this.tableLayoutPanel.SetColumnSpan(this.nodesTreeView, 2);
+            this.nodesTreeView.ImageIndex = 0;
+            this.nodesTreeView.ImageList = this.nodesImageList;
             this.nodesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nodesTreeView.Location = new System.Drawing.Point(3, 32);
             this.nodesTreeView.Name = "nodesTreeView";
+            this.nodesTreeView.SelectedImageIndex = 0;
             this.nodesTreeView.Size = new System.Drawing.Size(346, 535);
             this.nodesTreeView.TabIndex = 2;
             this.nodesTreeView.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.HandleNodesTreeViewAfterExpand);
+            this.nodesTreeView.ImageList = this.nodesImageList;
             // 
             // Form1
             // 
@@ -101,6 +119,7 @@
 
         #endregion
 
+        private System.Windows.Forms.ImageList nodesImageList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.TextBox serverAddressTextBox;
         private System.Windows.Forms.Button connectButton;
