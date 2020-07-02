@@ -158,7 +158,10 @@
                         this.HandleDataChangeReceived);
 
                 var monitoredItem = this.subscription.MonitoredItems[0];
-                this.NodeStatus = monitoredItem.Status.Error.Description;
+                var monitoredItemStatus = monitoredItem.Status;
+
+                if (monitoredItemStatus.Error != null)
+                    this.NodeStatus = monitoredItemStatus.Error.Description;
             }
             catch (Exception ex) {
                 this.NodeStatus = ex.Message;
