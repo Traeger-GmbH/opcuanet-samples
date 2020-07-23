@@ -1,0 +1,27 @@
+<Project InitialTargets="BuildSurrogate">
+  <Target Name="BuildSurrogate">
+    <PropertyGroup>
+      <SurrogateOutDir>$(MSBuildThisFileDirectory)packages\Opc.UaFx.Client\</SurrogateOutDir>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <SurrogateProjects Include="$(MSBuildThisFileDirectory)NuGetSurrogate.csproj">
+        <Properties>OutDir=$(SurrogateOutDir)</Properties>
+      </SurrogateProjects>
+    </ItemGroup>
+
+    <MSBuild Projects="@(SurrogateProjects)" Targets="Restore;Build" />
+
+    <ItemGroup>
+      <SurrogateFiles Include="$(MSBuildThisFileDirectory)packages\**\NuGetSurrogate.*" />
+    </ItemGroup>
+
+    <Delete Files="@(SurrogateFiles)" />
+
+    <ItemGroup>
+      <BuildDirectories Include="$(MSBuildThisFileDirectory)obj\" />
+    </ItemGroup>
+
+    <RemoveDir Directories="@(BuildDirectories)" />
+  </Target>
+</Project>
