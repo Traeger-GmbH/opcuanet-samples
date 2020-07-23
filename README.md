@@ -1,5 +1,5 @@
 # OPC UA .NET SDK Samples
-Here you will find sample projects for C# and VB.NET to guide developers of OPC UA Client and Server applications using our OPC UA .NET SDKs. Each sample is provided as it is without any promise regarding its accuracy and correctness especially in productive environments.
+Here you will find sample projects for C#, VB.NET and C++/CLI to guide developers of OPC UA Client and Server applications using our OPC UA .NET SDKs. Each sample is provided as it is without any promise regarding its accuracy and correctness especially in productive environments.
 
 ## SDKs
 All the samples/projects provided in this repository rely on one of our OPC UA SDKs:
