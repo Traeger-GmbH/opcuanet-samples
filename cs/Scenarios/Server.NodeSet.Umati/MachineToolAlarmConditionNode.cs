@@ -15,8 +15,8 @@ namespace NodeSet
 
         #region ---------- Public constructors ----------
 
-        public MachineToolAlarmConditionNode(/*IOpcNode parent*/)
-            : base(/*parent, */"MachineToolAlarmCondition")
+        public MachineToolAlarmConditionNode()
+            : base("MachineToolAlarmCondition")
         {
             this.alarmIdentifierNode = new OpcDataVariableNode<string>(this, "2:AlarmIdentifier");
             this.auxParametersNode = new OpcDataVariableNode<string>(this, "2:AuxParameters");
