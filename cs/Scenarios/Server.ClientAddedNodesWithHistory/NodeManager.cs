@@ -76,11 +76,11 @@ namespace ClientAddedNodesWithHistory
                 OpcVariableValue<object> value)
         {
             // A client may not pass a timestamp associated with a new value or may use the same
-            // timestamp as used already used by the variable node.
+            // timestamp as already used by the variable node.
             //
-            // Upon we want to enfore that every value written to the node uses its own timestamp
-            // we update the variable accordingly its timestamp is then applied to the variable
-            // node accordingly which then results into a new entry in the history of the node.
+            // Upon we want to enforce that every value written to the node uses its own timestamp
+            // we update the variable value with the current time to assure that every write
+            // results into a new entry in the history of the node.
             if (value.Timestamp == null || value.Timestamp == context.Node.Timestamp)
                 value = new OpcVariableValue<object>(value.Value, DateTime.UtcNow, value.Status);
 
