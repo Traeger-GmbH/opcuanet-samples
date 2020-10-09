@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net46;net471;netcoreapp3.1</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="History.db" />
+    <None Remove="History.Modified.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="History.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="History.Modified.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.11.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.113.1" />
+  </ItemGroup>
+</Project>

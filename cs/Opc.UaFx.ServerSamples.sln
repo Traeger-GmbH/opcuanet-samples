@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.DynamicNodes", "Scen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeSet.Umati", "Scenarios\Server.NodeSet.Umati\Server.NodeSet.Umati.csproj", "{4D34E8C5-6AAD-4049-973B-8F0CDC48ECAE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.HDA.Sql", "Basic\Server.HDA.Sql\Server.HDA.Sql.csproj", "{F111E35F-FE2E-4C1A-88EF-1DC6B51108A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{4D34E8C5-6AAD-4049-973B-8F0CDC48ECAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D34E8C5-6AAD-4049-973B-8F0CDC48ECAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D34E8C5-6AAD-4049-973B-8F0CDC48ECAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F111E35F-FE2E-4C1A-88EF-1DC6B51108A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F111E35F-FE2E-4C1A-88EF-1DC6B51108A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F111E35F-FE2E-4C1A-88EF-1DC6B51108A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F111E35F-FE2E-4C1A-88EF-1DC6B51108A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{45538FB6-1AAC-45CF-942F-2BC152FBF2D8} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{29953B53-A612-4266-918B-D7A66F3CAB77} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{4D34E8C5-6AAD-4049-973B-8F0CDC48ECAE} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{F111E35F-FE2E-4C1A-88EF-1DC6B51108A4} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
