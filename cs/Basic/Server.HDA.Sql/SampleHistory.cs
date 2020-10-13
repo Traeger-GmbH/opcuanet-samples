@@ -44,9 +44,13 @@ namespace HDA.Sql
             if (typeof(T) != typeof(OpcHistoryValue) && typeof(T) != typeof(OpcModifiedHistoryValue))
                 throw new ArgumentException();
 
-            var connection = new SQLiteConnection($"Data Source={dataSource}");
-            connection.Open();
+            var builder = new SQLiteConnectionStringBuilder();
+            builder.DataSource = dataSource;
 
+            var connection = new SQLiteConnection(
+                    builder.ToString(), parseViaFramework: true);
+
+            connection.Open();
             return new SampleHistory<T>(new Repository(connection, nodeId));
         }
 
