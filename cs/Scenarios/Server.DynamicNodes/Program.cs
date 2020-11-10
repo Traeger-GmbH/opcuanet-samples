@@ -25,6 +25,7 @@ namespace DynamicNodes
                 Console.WriteLine("Press enter to exit or ...");
                 Console.WriteLine("... enter a node path like '/a/b/c' to create a folder node.");
                 Console.WriteLine("... enter a path like '/a/b/.d' to create a numeric variable node.");
+                Console.WriteLine("... begin the path with '$' instead of a '/' to create a new root node.");
                 Console.WriteLine();
 
                 while (true) {
@@ -33,7 +34,13 @@ namespace DynamicNodes
                     if (path.Length == 0)
                         break;
 
-                    var node = manager.AddNode(path);
+                    var node = default(IOpcNode);
+
+                    if (path[0][0] == '$')
+                        node = manager.AddRootNode(path);
+                    else
+                        node = manager.AddNode(path);
+
                     Console.WriteLine("Created: '{0}'", node.Id.ToString(OpcNodeIdFormat.Foundation));
                 }
             }

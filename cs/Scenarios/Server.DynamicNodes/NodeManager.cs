@@ -4,7 +4,8 @@ namespace DynamicNodes
 {
     using System;
     using System.Collections.Generic;
-
+    using System.Linq;
+    using Opc.Ua;
     using Opc.UaFx;
     using Opc.UaFx.Server;
 
@@ -30,8 +31,12 @@ namespace DynamicNodes
 
         internal IOpcNode AddNode(params string[] path)
         {
+            return this.AddNode(this.rootNode, path);
+        }
+
+        internal IOpcNode AddNode(IOpcNode parentNode, params string[] path)
+        {
             var context = this.SystemContext;
-            var parentNode = (OpcInstanceNode)this.rootNode;
 
             foreach (var name in path) {
                 var childNode = (OpcInstanceNode)parentNode.Child(context, name);
@@ -52,6 +57,19 @@ namespace DynamicNodes
             }
 
             return parentNode;
+        }
+
+        internal IOpcNode AddRootNode(params string[] path)
+        {
+            var newNode = new OpcFolderNode(path[0].TrimStart('$'));
+
+            var reference = OpcNodeReference.To(OpcObjectTypes.ObjectsFolder);
+            this.AddNode(this.SystemContext, newNode, reference);
+
+            if (path.Length > 1)
+                return this.AddNode(newNode, path.Skip(1).ToArray());
+
+            return newNode;
         }
 
         #endregion
