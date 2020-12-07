@@ -4,11 +4,11 @@ Here you will find sample projects for C#, VB.NET and C++/CLI to guide developer
 ## SDKs
 All the samples/projects provided in this repository rely on one of our OPC UA SDKs:
  * OPC UA .NET SDK for Clients (Opc.UaFx.Client)
-   * [NuGet Package](https://www.nuget.org/packages/Opc.UaFx.Client/)
+   * [NuGet Package](https://www.nuget.org/packages/Opc.UaFx.Client/) [![NuGet Badge](https://buildstats.info/nuget/Opc.UaFx.Client)](https://www.nuget.org/packages/Opc.UaFx.Client/)
    * [ZIP Archive](https://docs.traeger.de/downloads?do=download_latest&name=opc.uafx.client&type=zip)
    * [Development Guide](https://docs.traeger.de/en/software/sdk/opc-ua/net/client.development.guide)
  * OPC UA .NET SDK for Clients and Servers (Opc.UaFx.Advanced)
-   * [NuGet Package](https://www.nuget.org/packages/Opc.UaFx.Advanced/)
+   * [NuGet Package](https://www.nuget.org/packages/Opc.UaFx.Advanced/) [![NuGet Badge](https://buildstats.info/nuget/Opc.UaFx.Advanced)](https://www.nuget.org/packages/Opc.UaFx.Advanced/)
    * [ZIP Archive](https://docs.traeger.de/downloads?do=download_latest&name=opc.uafx.advanced&type=zip)
    * [Client Development Guide](https://docs.traeger.de/en/software/sdk/opc-ua/net/client.development.guide)
    * [Server Development Guide](https://docs.traeger.de/en/software/sdk/opc-ua/net/server.development.guide)
