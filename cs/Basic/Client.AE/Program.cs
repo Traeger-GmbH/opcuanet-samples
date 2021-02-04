@@ -172,7 +172,7 @@ namespace AE
             // In general event handling can be implemented here, too. The approach of this sample
             // takes use of the nodes collection to summarize the received information to process
             // it all in one run to simplify the handling of the console out- and input.
-            var nodeId = e.Event.SourceNodeId.ToString(OpcNodeIdFormat.Foundation);
+            var nodeId = e.Event.SourceNodeId?.ToString(OpcNodeIdFormat.Foundation);
 
             if (nodeId != null && nodes.Contains(nodeId))
                 nodes[nodeId].Event = e.Event;
