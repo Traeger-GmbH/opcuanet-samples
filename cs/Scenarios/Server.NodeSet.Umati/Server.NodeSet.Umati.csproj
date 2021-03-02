@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Advanced" Version="2.12.0" />
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.13.0" />
   </ItemGroup>
 
   <ItemGroup>
