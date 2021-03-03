@@ -49,6 +49,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.DynamicNamespaces", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.DataTypes", "Basic\Server.DataTypes\Server.DataTypes.csproj", "{7FE88216-32D5-4D6A-98BC-F1886F058043}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeTypes", "Basic\Server.NodeTypes\Server.NodeTypes.csproj", "{4242A85F-3EC1-4978-A450-CFFE37F8165F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,10 @@ Global
 		{7FE88216-32D5-4D6A-98BC-F1886F058043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FE88216-32D5-4D6A-98BC-F1886F058043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FE88216-32D5-4D6A-98BC-F1886F058043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4242A85F-3EC1-4978-A450-CFFE37F8165F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4242A85F-3EC1-4978-A450-CFFE37F8165F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4242A85F-3EC1-4978-A450-CFFE37F8165F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4242A85F-3EC1-4978-A450-CFFE37F8165F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -155,6 +161,7 @@ Global
 		{602868A9-3A13-47FF-BA15-3E567C8AD0B7} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{C8DAC08D-08F2-4D45-8451-1A08F97B985A} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{7FE88216-32D5-4D6A-98BC-F1886F058043} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
+		{4242A85F-3EC1-4978-A450-CFFE37F8165F} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
