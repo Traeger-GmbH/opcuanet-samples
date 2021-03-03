@@ -59,8 +59,8 @@
     <DisplayName>MyComplexObjectType</DisplayName>
     <References>
       <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
-      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexObjectType/MandatoryValue</Reference>
-      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexObjectType/OptionalValue</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexObjectType/First</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexObjectType/Second</Reference>
     </References>
   </UAObjectType>
   <UAVariable DataType="Int32" ParentNodeId="ns=1;s=MyComplexObjectType" NodeId="ns=1;s=MyComplexObjectType/First" BrowseName="1:First" AccessLevel="3">
