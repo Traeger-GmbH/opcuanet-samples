@@ -1,6 +1,6 @@
 # Getting Started
 
-1. Got to <https://docs.traeger.de/en/software/sdk/opc-ua/net>
+1. Go to <https://docs.traeger.de/en/software/sdk/opc-ua/net>
 2. Download the **OPC UA .NET SDK for LabVIEW Clients**
 3. Unarchive the ZIP and copy the **net46** folder into your LabVIEW project directory.
 4. Consume the .NET Objects defined in the **Opc.UaFx.Client.LabView.dll** in LabVIEW.
