@@ -55,6 +55,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.UserIdentities", "Sc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.CustomFile", "Scenarios\Server.CustomFile\Server.CustomFile.csproj", "{E39B99EA-5356-4B0F-B2D9-5339A70CC63D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.SimaticNodes", "Scenarios\Server.SimaticNodes\Server.SimaticNodes.csproj", "{8CDFBF9D-AEAA-4ADA-8CAD-BEB3B912BD49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,10 @@ Global
 		{E39B99EA-5356-4B0F-B2D9-5339A70CC63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E39B99EA-5356-4B0F-B2D9-5339A70CC63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E39B99EA-5356-4B0F-B2D9-5339A70CC63D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDFBF9D-AEAA-4ADA-8CAD-BEB3B912BD49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDFBF9D-AEAA-4ADA-8CAD-BEB3B912BD49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDFBF9D-AEAA-4ADA-8CAD-BEB3B912BD49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDFBF9D-AEAA-4ADA-8CAD-BEB3B912BD49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +182,7 @@ Global
 		{4242A85F-3EC1-4978-A450-CFFE37F8165F} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{9D4B25CC-C0C5-4C80-B331-8128F30287AA} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{E39B99EA-5356-4B0F-B2D9-5339A70CC63D} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{8CDFBF9D-AEAA-4ADA-8CAD-BEB3B912BD49} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}

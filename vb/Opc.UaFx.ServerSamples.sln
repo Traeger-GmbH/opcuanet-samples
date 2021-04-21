@@ -35,6 +35,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Server.DataTypes", "Basic\S
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Server.HDA.Sql", "Basic\Server.HDA.Sql\Server.HDA.Sql.vbproj", "{DCA578F7-519C-4CBD-85A0-AB560577FFF3}"
 EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Server.SimaticNodes", "Scenarios\Server.SimaticNodes\Server.SimaticNodes.vbproj", "{6AF581DA-9C96-41E3-A3EA-FBC6DA72EA99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{DCA578F7-519C-4CBD-85A0-AB560577FFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA578F7-519C-4CBD-85A0-AB560577FFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA578F7-519C-4CBD-85A0-AB560577FFF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AF581DA-9C96-41E3-A3EA-FBC6DA72EA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF581DA-9C96-41E3-A3EA-FBC6DA72EA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF581DA-9C96-41E3-A3EA-FBC6DA72EA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF581DA-9C96-41E3-A3EA-FBC6DA72EA99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +112,7 @@ Global
 		{8B9AA79D-269D-4C5A-8818-DD21C7B16CCC} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{2F4C5541-0871-40DB-973A-CA9C332D6103} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{DCA578F7-519C-4CBD-85A0-AB560577FFF3} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
+		{6AF581DA-9C96-41E3-A3EA-FBC6DA72EA99} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
