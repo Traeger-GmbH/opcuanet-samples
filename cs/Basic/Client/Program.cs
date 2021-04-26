@@ -3,67 +3,60 @@
 namespace Client
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Opc.UaFx;
     using Opc.UaFx.Client;
 
-    /// <summary>
-    /// This sample demonstrates how to implement a primitive OPC UA client.
-    /// </summary>
     public class Program
     {
-        #region ---------- Public static methods ----------
+        private static List<int> values = new List<int>();
 
         public static void Main(string[] args)
         {
-            //// If the server domain name does not match localhost just replace it
-            //// e.g. with the IP address or name of the server machine.
+            var id = new OpcNodeId("a", 1);
+            var ids = new List<OpcNodeId>();
 
-            #region 1st Way: Use the OpcClient class.
-            {
-                // The OpcClient class interacts with one OPC UA server. While this class
-                // provides session based access to the different OPC UA services of the
-                // server, it does not implement a main loop.
-                var client = new OpcClient("opc.tcp://localhost:4840/SampleServer");
+            ids.Add(id);
+            ids.Add(id);
+            ids.Add(id);
+            ids.Add(id);
+            ids.Add(new OpcNodeId("a", 1));
 
+            var xx = ids.Distinct().ToArray();
+
+            using (var client = new OpcClient("opc.tcp://192.168.0.83:4840")) {
                 client.Connect();
-                Program.CommunicateWithServer(client);
-                client.Disconnect();
+
+                var sub = client.SubscribeNodes(
+                        new OpcSubscribeDataChange("ns=3;s=\"FlankenDB\".\"FlankentriggerCounter\"", OpcAttribute.Value, new OpcDataChangeFilter(OpcDataChangeTrigger.StatusValue), HandleDataChanged),
+                        new OpcSubscribeDataChange("ns=3;s=\"FlankenDB\".\"FlankentriggerCounter\"", HandleDataChanged));
+
+                sub.PublishingInterval = 1000;
+                sub.ApplyChanges();
+
+                Console.WriteLine("Subscribed.");
+                Console.ReadLine();
             }
-            #endregion
-
-            #region 2nd Way: Use the OpcClientApplication class.
-            {
-                //// The OpcClientApplication class uses a single OpcClient instance which is
-                //// wrapped within a main loop.
-                ////
-                //// Remarks
-                //// - The app instance starts a main loop when the session to the server has
-                ////   been established.
-                //// - Custom client/session dependent code have to be implemented within the event
-                ////   handler of the Started event.
-                //var app = new OpcClientApplication("opc.tcp://localhost:4840/SampleServer");
-                //app.Started += Program.HandleAppStarted;
-
-                //app.Run();
-            }
-            #endregion
         }
 
-        #endregion
 
-        #region ---------- Private static methods ----------
-
-        private static void CommunicateWithServer(OpcClient client)
+        private static void HandleDataChanged(object sender, OpcDataChangeReceivedEventArgs e)
         {
-            Console.WriteLine("ReadNode: {0}", client.ReadNode("ns=2;s=Machine_1/IsActive"));
-            client.WriteNode("ns=2;s=Machine_1/IsActive", false);
-            Console.WriteLine("ReadNode: {0}", client.ReadNode("ns=2;s=Machine_1/IsActive"));
-        }
+            var item = (OpcMonitoredItem)sender;
+            var last = item.LastDataChange;
+            //var last = e.Item;
 
-        private static void HandleAppStarted(object sender, EventArgs e)
-        {
-            Program.CommunicateWithServer(((OpcClientApplication)sender).Client);
-        }
+            var value = last.Value.As<int>();
 
-        #endregion
+            if (values.Contains(value))
+                System.Diagnostics.Debugger.Break();
+
+            values.Add(value);
+
+            Console.WriteLine($"{DateTime.Now.ToString("o")} {last.Value} {last.Value.ServerTimestamp} {last.Value.ServerPicoseconds} Data Change from NodeId: '{item.NodeId.ValueAsString}'");
+            Console.WriteLine(new string('-', 100));
+        }
     }
 }
