@@ -44,8 +44,8 @@ Namespace Server
             references.Add(machineOne, OpcObjectTypes.ObjectsFolder)
 
             Dim name As New OpcDataVariableNode(Of String)(machineOne, "Name", "Machine 1")
-            Dim status As New OpcDataVariableNode(Of Byte)(machineOne, "Status", 1)
-            Dim position As New OpcDataVariableNode(Of SByte)(machineOne, "Position", -1)
+            Dim status As New OpcDataVariableNode(Of Byte)(machineOne, "Status", CByte(1))
+            Dim position As New OpcDataVariableNode(Of SByte)(machineOne, "Position", CSByte(-1))
             Dim isActive As New OpcDataVariableNode(Of Boolean)(machineOne, "IsActive", True)
             Dim temperature As New OpcDataVariableNode(Of Double)(machineOne, "Temperature", 18.3)
 
