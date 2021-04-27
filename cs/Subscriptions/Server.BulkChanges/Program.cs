@@ -77,13 +77,15 @@ namespace BulkChanges
             var server = (OpcServer)state;
 
             while (!producerControl.IsCancellationRequested) {
-                unchecked {
-                    foreach (var node in dataNodes)
-                        node.Value++;
-                }
+                lock (state) {
+                    unchecked {
+                        foreach (var node in dataNodes)
+                            node.Value++;
+                    }
 
-                timestampNode.Value = DateTime.UtcNow;
-                dataNode.ApplyChanges(server.SystemContext, recursive: true);
+                    timestampNode.Value = DateTime.UtcNow;
+                    dataNode.ApplyChanges(server.SystemContext, recursive: true);
+                }
 
                 Console.WriteLine("{0} BULK: New Data available - pausing for {1} ms.", DateTime.Now, Interval);
 

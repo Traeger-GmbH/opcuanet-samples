@@ -86,19 +86,21 @@ namespace HandshakeChanges
             var server = (OpcServer)state;
 
             while (!producerControl.IsCancellationRequested) {
-                dataAvailableNode.Value = false;
-                dataAvailableNode.ApplyChanges(server.SystemContext);
+                lock (state) {}
+                    dataAvailableNode.Value = false;
+                    dataAvailableNode.ApplyChanges(server.SystemContext);
 
-                unchecked {
-                    foreach (var node in dataNodes)
-                        node.Value++;
+                    unchecked {
+                        foreach (var node in dataNodes)
+                            node.Value++;
+                    }
+
+                    dataProcessedNode.Value = false;
+                    dataAvailableNode.Value = true;
+
+                    timestampNode.Value = DateTime.UtcNow;
+                    dataNode.ApplyChanges(server.SystemContext, recursive: true);
                 }
-
-                dataProcessedNode.Value = false;
-                dataAvailableNode.Value = true;
-
-                timestampNode.Value = DateTime.UtcNow;
-                dataNode.ApplyChanges(server.SystemContext, recursive: true);
 
                 try {
                     do {
