@@ -18,8 +18,8 @@ namespace HandshakeChanges
     {
         #region ---------- Private static readonly fields ----------
 
-        private static readonly int Interval = 250;
-        private static readonly int NumberOfNodes = 50000;
+        private static readonly int Interval = 5000;
+        private static readonly int NumberOfNodes = 500;
 
         #endregion
 
