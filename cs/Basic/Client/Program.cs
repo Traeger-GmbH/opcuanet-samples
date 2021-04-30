@@ -4,6 +4,7 @@ namespace Client
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
 
     using Opc.UaFx;
@@ -11,52 +12,31 @@ namespace Client
 
     public class Program
     {
-        private static List<int> values = new List<int>();
-
         public static void Main(string[] args)
         {
-            var id = new OpcNodeId("a", 1);
-            var ids = new List<OpcNodeId>();
-
-            ids.Add(id);
-            ids.Add(id);
-            ids.Add(id);
-            ids.Add(id);
-            ids.Add(new OpcNodeId("a", 1));
-
-            var xx = ids.Distinct().ToArray();
-
             using (var client = new OpcClient("opc.tcp://192.168.0.83:4840")) {
+                client.UseDynamic = true;
                 client.Connect();
 
-                var sub = client.SubscribeNodes(
-                        new OpcSubscribeDataChange("ns=3;s=\"FlankenDB\".\"FlankentriggerCounter\"", OpcAttribute.Value, new OpcDataChangeFilter(OpcDataChangeTrigger.StatusValue), HandleDataChanged),
-                        new OpcSubscribeDataChange("ns=3;s=\"FlankenDB\".\"FlankentriggerCounter\"", HandleDataChanged));
+                var watch = Stopwatch.StartNew();
+                var value = client.ReadNode("ns=3;s=\"EdgeTest\".\"fromEdge _1\"");
+                Console.WriteLine(watch.ElapsedMilliseconds);
 
-                sub.PublishingInterval = 1000;
-                sub.ApplyChanges();
-
-                Console.WriteLine("Subscribed.");
+                watch.Restart();
+                value = client.ReadNode("ns=3;s=\"EdgeTest\".\"fromEdge _1\"");
+                Console.WriteLine(watch.ElapsedMilliseconds);
                 Console.ReadLine();
+
+                watch.Restart();
+                value = client.ReadNode("ns=3;s=\"EdgeTest\".\"fromEdge _1\"");
+                Console.WriteLine(watch.ElapsedMilliseconds);
+                Console.ReadLine();
+
+                //var browseNode = new OpcBrowseNode("ns=3;s=\"AlleDatenTypen\"", OpcBrowseNodeDegree.Generation);
+                //browseNode.Options = OpcBrowseOptions.IncludeCategory;
+
+                //var nodeIds = BrowseNodeIds(client.BrowseNode(browseNode)).ToArray();
             }
-        }
-
-
-        private static void HandleDataChanged(object sender, OpcDataChangeReceivedEventArgs e)
-        {
-            var item = (OpcMonitoredItem)sender;
-            var last = item.LastDataChange;
-            //var last = e.Item;
-
-            var value = last.Value.As<int>();
-
-            if (values.Contains(value))
-                System.Diagnostics.Debugger.Break();
-
-            values.Add(value);
-
-            Console.WriteLine($"{DateTime.Now.ToString("o")} {last.Value} {last.Value.ServerTimestamp} {last.Value.ServerPicoseconds} Data Change from NodeId: '{item.NodeId.ValueAsString}'");
-            Console.WriteLine(new string('-', 100));
         }
     }
 }
