@@ -54,6 +54,7 @@ namespace DataTypes
             new OpcDataVariableNode<MachineStatus>(machineOne, "Status", MachineStatus.Stopped);
             new OpcDataVariableNode<bool>(machineOne, "IsActive", false);
             new OpcDataVariableNode<double>(machineOne, "Temperature", 18.3);
+            new OpcMethodNode(machineOne, "StartJob", new Action<MachineJob>(job => Console.WriteLine(job.Number)));
             new OpcDataVariableNode<MachineJob>(machineOne, "Job", new MachineJob() {
                 Number = "JOB001",
                 EstimatedDuration = 12500,
@@ -68,6 +69,7 @@ namespace DataTypes
             new OpcDataVariableNode<MachineStatus>(machineTwo, "Status", MachineStatus.Suspended);
             new OpcDataVariableNode<bool>(machineTwo, "IsActive", true);
             new OpcDataVariableNode<double>(machineTwo, "Temperature", 20.7);
+            new OpcMethodNode(machineOne, "StartJob", new Action<MachineJob>(job => Console.WriteLine(job.Number)));
             new OpcDataVariableNode<ManufacturingOrder>(machineTwo, "Order", new ManufacturingOrder() {
                 Order = "2020.10.10001",
                 Article = "ART10025",
