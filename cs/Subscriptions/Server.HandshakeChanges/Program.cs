@@ -86,7 +86,7 @@ namespace HandshakeChanges
             var server = (OpcServer)state;
 
             while (!producerControl.IsCancellationRequested) {
-                lock (state) {}
+                lock (state) {
                     dataAvailableNode.Value = false;
                     dataAvailableNode.ApplyChanges(server.SystemContext);
 
