@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.LightweightEvents", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.BulkChanges.HiRes", "Subscriptions\Server.BulkChanges.HiRes\Server.BulkChanges.HiRes.csproj", "{E063993E-E0CD-4641-BDED-6B946AAD3313}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.MethodNode", "Nodes\Server.MethodNode\Server.MethodNode.csproj", "{693134EB-45CD-43BF-A334-79E0859A816A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +183,10 @@ Global
 		{E063993E-E0CD-4641-BDED-6B946AAD3313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E063993E-E0CD-4641-BDED-6B946AAD3313}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E063993E-E0CD-4641-BDED-6B946AAD3313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693134EB-45CD-43BF-A334-79E0859A816A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693134EB-45CD-43BF-A334-79E0859A816A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693134EB-45CD-43BF-A334-79E0859A816A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693134EB-45CD-43BF-A334-79E0859A816A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -213,6 +219,7 @@ Global
 		{433053CD-78F7-4029-950E-00F381A092BB} = {C5FB1DE7-1BEA-475B-BEA6-5A86D67064E9}
 		{DCA2CF80-4854-4880-B39D-6EA734DC9B6F} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{E063993E-E0CD-4641-BDED-6B946AAD3313} = {C5FB1DE7-1BEA-475B-BEA6-5A86D67064E9}
+		{693134EB-45CD-43BF-A334-79E0859A816A} = {AA959C0B-D609-47FC-B223-ABCF3E164A33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
