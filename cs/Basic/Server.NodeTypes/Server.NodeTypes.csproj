@@ -16,13 +16,4 @@
   <ItemGroup>
     <PackageReference Include="Opc.UaFx.Advanced" Version="2.18.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Update="umati-instances_EMO2019.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="umati_EMO2019.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 </Project>
