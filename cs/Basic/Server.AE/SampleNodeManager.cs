@@ -265,7 +265,7 @@ namespace AE
             // This will trigger DataChange notification being send to DataChange subscriptions.
             this.statusNode.ApplyChanges(this.SystemContext);
 
-            if (this.statusNode.Value == 45) {
+            if (this.statusNode.Value % 5 == 0) {
                 this.isActiveNode.Value = false;
 
                 // This will trigger DataChange notification being send to DataChange subscriptions.

@@ -71,6 +71,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.MethodNode", "Nodes\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.EventTypes", "Basic\Server.EventTypes\Server.EventTypes.csproj", "{35FB636D-F881-45AC-A317-DB2445CE0A62}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeSet.PackML", "Scenarios\Server.NodeSet.PackML\Server.NodeSet.PackML.csproj", "{82472D52-5DD1-4A2E-9A93-1B96CC3EF57B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -193,6 +195,10 @@ Global
 		{35FB636D-F881-45AC-A317-DB2445CE0A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35FB636D-F881-45AC-A317-DB2445CE0A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35FB636D-F881-45AC-A317-DB2445CE0A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82472D52-5DD1-4A2E-9A93-1B96CC3EF57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82472D52-5DD1-4A2E-9A93-1B96CC3EF57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82472D52-5DD1-4A2E-9A93-1B96CC3EF57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82472D52-5DD1-4A2E-9A93-1B96CC3EF57B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -227,6 +233,7 @@ Global
 		{E063993E-E0CD-4641-BDED-6B946AAD3313} = {C5FB1DE7-1BEA-475B-BEA6-5A86D67064E9}
 		{693134EB-45CD-43BF-A334-79E0859A816A} = {AA959C0B-D609-47FC-B223-ABCF3E164A33}
 		{35FB636D-F881-45AC-A317-DB2445CE0A62} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
+		{82472D52-5DD1-4A2E-9A93-1B96CC3EF57B} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}
