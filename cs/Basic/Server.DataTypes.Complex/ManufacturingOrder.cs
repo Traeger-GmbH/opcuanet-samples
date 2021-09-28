@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Traeger Industry Components GmbH. All Rights Reserved.
 
-namespace DataTypes
+namespace DataTypes.Complex
 {
     using System;
     using Opc.UaFx;
@@ -10,7 +10,7 @@ namespace DataTypes
     [OpcDataTypeEncoding("ns=2;s=ManufacturingOrder.Binary", Type = OpcEncodingType.Binary)]
     public class ManufacturingOrder
     {
-        private MachineJob[] jobs;
+        private MachineJob[] jobs = new MachineJob[3];
 
 
         public string Article
