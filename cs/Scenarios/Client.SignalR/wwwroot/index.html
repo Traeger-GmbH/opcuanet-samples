@@ -1,0 +1,112 @@
+﻿<!-- Copyright (c) Traeger Industry Components GmbH. All Rights Reserved. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>OPC UA to SignalR Sample</title>
+
+    <script type="text/javascript" src="/lib/microsoft-signalr/signalr.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/lib/bootstrap/css//bootstrap.min.css">
+    <script type="text/javascript">
+        let connection = new signalR.HubConnectionBuilder()
+            .withUrl("signalr")
+            .build();
+
+        function setCurrentValue(id, value) {
+            document.getElementById(id).textContent = value;
+        }
+
+        function setErrorMessage(id, message) {
+            setCurrentValue(id, message + " Is the OPC UA Server running?");
+        }
+
+        window.addEventListener("load", async function () {
+            await connection.start();
+
+            connection.stream(
+                "SubscribeNodeValueChanges",
+                "ns=2;s=Data/My Node 01")
+                .subscribe({
+                    next: (e) => {
+                        setCurrentValue("value01", e);
+                    },
+                    complete: () => {
+                        setCurrentValue("value01", "Subscription has been completed.");
+                    },
+                    error: (err) => {
+                        setErrorMessage("value01", err);
+                    }
+                });
+
+            connection.stream(
+                "SubscribeNodeValueChanges",
+                "ns=2;s=Data/My Node 02")
+                .subscribe({
+                    next: (e) => {
+                        setCurrentValue("value02", e);
+                    },
+                    complete: () => {
+                        setCurrentValue("value02", "Subscription has been completed.");
+                    },
+                    error: (err) => {
+                        setErrorMessage("value02", err);
+                    }
+                });
+        });
+    </script>
+</head>
+<body>
+    <div class="container p-5">
+        <h1 class="">OPC UA to SignalR Sample</h1>
+        <table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Node ID</th>
+                    <th scope="col">Current Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ns=2;s=Data/My Node 01</td>
+                    <td id="value01">loading...</td>
+                </tr>
+                <tr>
+                    <td>ns=2;s=Data/My Node 02</td>
+                    <td id="value02">loading...</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!--<div class="row justify-content-start p-2 my-2 fw-bold bg-light border-bottom">
+            <div class="col-sm-5">
+                Node ID
+            </div>
+            <class class="col-4 border-start">
+                Current Value
+            </class>
+        </div>
+        <div class="row justify-content-start p-2 my-2 border-bottom">
+            <div class="col-sm-5">
+                ns=2;s=Data/My Node 01
+            </div>
+            <class id="value01" class="col-4 border-start">
+                loading...
+            </class>
+        </div>
+        <div class="row justify-content-start p-2 my-2">
+            <div class="col-sm-5">
+                ns=2;s=Data/My Node 02
+            </div>
+            <div id="value02" class="col-4 border-start">
+                loading...
+            </div>
+        </div>-->
+    </div>
+</body>
+</html>
