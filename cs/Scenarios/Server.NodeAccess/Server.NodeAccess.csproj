@@ -6,6 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Advanced" Version="2.18.0" />
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.20.2" />
   </ItemGroup>
 </Project>
