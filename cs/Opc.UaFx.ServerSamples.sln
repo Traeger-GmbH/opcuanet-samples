@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30320.27
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{81C25810-BA7F-4DA8-8671-9C53CB89244C}"
 EndProject
@@ -76,6 +76,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.DataTypes.Complex", "Basic\Server.DataTypes.Complex\Server.DataTypes.Complex.csproj", "{C1541041-5D0E-480E-B58F-4DE37ABEB6FD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.SignalR", "Scenarios\Server.SignalR\Server.SignalR.csproj", "{2470759A-887B-4261-834A-A5F6E7FDD62C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeSet.Umati.MachineTool", "Scenarios\Server.NodeSet.Umati.MachineTool\Server.NodeSet.Umati.MachineTool.csproj", "{D5705F35-7925-47B8-8B7D-F94BAF0FB0A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -211,6 +213,10 @@ Global
 		{2470759A-887B-4261-834A-A5F6E7FDD62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2470759A-887B-4261-834A-A5F6E7FDD62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2470759A-887B-4261-834A-A5F6E7FDD62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5705F35-7925-47B8-8B7D-F94BAF0FB0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5705F35-7925-47B8-8B7D-F94BAF0FB0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5705F35-7925-47B8-8B7D-F94BAF0FB0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5705F35-7925-47B8-8B7D-F94BAF0FB0A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -248,6 +254,7 @@ Global
 		{82472D52-5DD1-4A2E-9A93-1B96CC3EF57B} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 		{C1541041-5D0E-480E-B58F-4DE37ABEB6FD} = {81C25810-BA7F-4DA8-8671-9C53CB89244C}
 		{2470759A-887B-4261-834A-A5F6E7FDD62C} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
+		{D5705F35-7925-47B8-8B7D-F94BAF0FB0A5} = {074E2979-8A4D-4BCC-A96C-EB3C6E427D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A5326C4-49CF-4315-8D43-E794E0E8BC32}

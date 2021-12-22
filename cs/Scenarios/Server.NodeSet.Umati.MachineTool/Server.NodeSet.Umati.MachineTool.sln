@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeSet.Umati.MachineTool", "Server.NodeSet.Umati.MachineTool.csproj", "{D296AF5A-3194-43E8-89A4-32848DD98FAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D296AF5A-3194-43E8-89A4-32848DD98FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D296AF5A-3194-43E8-89A4-32848DD98FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D296AF5A-3194-43E8-89A4-32848DD98FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D296AF5A-3194-43E8-89A4-32848DD98FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB4F1FFD-FC6E-4CA7-870C-C8F4C701F9CF}
+	EndGlobalSection
+EndGlobal
