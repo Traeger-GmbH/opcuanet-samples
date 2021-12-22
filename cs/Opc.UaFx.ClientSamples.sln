@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Wpf", "Platforms\Cli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.NodeExplorer", "Scenarios\Client.NodeExplorer\Client.NodeExplorer.csproj", "{38A3BA54-676A-478F-B597-7DB13E5979FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Umati", "Scenarios\Client.Umati\Client.Umati.csproj", "{E9D18F25-B1D5-475D-BBF5-D1881BAB10AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Umati.Legacy", "Scenarios\Client.Umati.Legacy\Client.Umati.Legacy.csproj", "{E9D18F25-B1D5-475D-BBF5-D1881BAB10AA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Localization", "Scenarios\Client.Localization\Client.Localization.csproj", "{E36ED5D8-4187-4CF3-9CEE-6D0C9BA10D2F}"
 EndProject

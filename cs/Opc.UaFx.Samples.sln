@@ -67,9 +67,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.NodeExplorer", "Scen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Wpf", "Platforms\Client.Wpf\Client.Wpf.csproj", "{F43AF600-B4A0-455F-81FD-63A9D7699C77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeSet.Umati", "Scenarios\Server.NodeSet.Umati\Server.NodeSet.Umati.csproj", "{2947245F-53CC-4322-9941-6E809706E5BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.NodeSet.Umati.Legacy", "Scenarios\Server.NodeSet.Umati.Legacy\Server.NodeSet.Umati.Legacy.csproj", "{2947245F-53CC-4322-9941-6E809706E5BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Umati", "Scenarios\Client.Umati\Client.Umati.csproj", "{9051F4F7-4A69-49E6-87D6-872F5A2A0B12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Umati.Legacy", "Scenarios\Client.Umati.Legacy\Client.Umati.Legacy.csproj", "{9051F4F7-4A69-49E6-87D6-872F5A2A0B12}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.HDA.Sql", "Basic\Server.HDA.Sql\Server.HDA.Sql.csproj", "{6BFC23D8-24A4-45A9-9FB7-BC745DA263DA}"
 EndProject
