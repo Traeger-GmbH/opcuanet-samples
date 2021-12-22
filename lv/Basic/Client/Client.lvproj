@@ -15,7 +15,6 @@
 			<Item Name="mscorlib" Type="VI" URL="mscorlib">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Opc.UaFx.Client.dll" Type="Document" URL="../net46/Opc.UaFx.Client.dll"/>
 			<Item Name="Opc.UaFx.Client.LabView.dll" Type="Document" URL="../net46/Opc.UaFx.Client.LabView.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
