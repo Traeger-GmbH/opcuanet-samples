@@ -7,6 +7,7 @@
 /[Aa]ssets/Opc.UaFx.Client/
 /[Ll]ibrary/**/*
 !/[Ll]ibrary/*.asset
+!/[Pp]ackages/*.json
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
