@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd"
+           xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <NamespaceUris>
+    <Uri>http://sampleserver/samplenodetypes</Uri>
+  </NamespaceUris>
+  <Aliases>
+    <Alias Alias="Boolean">i=1</Alias>
+    <Alias Alias="Int32">i=6</Alias>
+    <Alias Alias="String">i=12</Alias>
+    <Alias Alias="HasModellingRule">i=37</Alias>
+    <Alias Alias="HasTypeDefinition">i=40</Alias>
+    <Alias Alias="HasSubtype">i=45</Alias>
+    <Alias Alias="HasComponent">i=47</Alias>
+  </Aliases>
+
+  <UAVariableType DataType="Int32" NodeId="ns=1;s=MySimpleVariableType" BrowseName="1:MySimpleVariableType">
+    <DisplayName>MySimpleVariableType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=63</Reference>
+    </References>
+  </UAVariableType>
+
+  <UAVariableType DataType="Int32" NodeId="ns=1;s=MyComplexVariableType" BrowseName="1:MyComplexVariableType">
+    <DisplayName>MyComplexVariableType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=63</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexVariableType/MandatoryValue</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexVariableType/OptionalValue</Reference>
+    </References>
+  </UAVariableType>
+  <UAVariable DataType="String" ParentNodeId="ns=1;s=MyComplexVariableType" NodeId="ns=1;s=MyComplexVariableType/MandatoryValue" BrowseName="1:MandatoryValue" AccessLevel="3">
+    <DisplayName>MandatoryValue</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=MyComplexVariableType</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable DataType="Int32" ParentNodeId="ns=1;s=MyComplexVariableType" NodeId="ns=1;s=MyComplexVariableType/OptionalValue" BrowseName="1:OptionalValue" AccessLevel="3">
+    <DisplayName>OptionalValue</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=80</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=MyComplexVariableType</Reference>
+    </References>
+  </UAVariable>
+
+  <UAObjectType NodeId="ns=1;s=MySimpleObjectType" BrowseName="1:MySimpleObjectType">
+    <DisplayName>MySimpleObjectType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+
+  <UAObjectType NodeId="ns=1;s=MyComplexObjectType" BrowseName="1:MyComplexObjectType">
+    <DisplayName>MyComplexObjectType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexObjectType/First</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;s=MyComplexObjectType/Second</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable DataType="Int32" ParentNodeId="ns=1;s=MyComplexObjectType" NodeId="ns=1;s=MyComplexObjectType/First" BrowseName="1:First" AccessLevel="3">
+    <DisplayName>First</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;s=MySimpleVariableType</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=MyComplexObjectType</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable DataType="Int32" ParentNodeId="ns=1;s=MyComplexObjectType" NodeId="ns=1;s=MyComplexObjectType/Second" BrowseName="1:Second" AccessLevel="3">
+    <DisplayName>Second</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;s=MyComplexVariableType</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=MyComplexObjectType</Reference>
+    </References>
+  </UAVariable>
+</UANodeSet>
