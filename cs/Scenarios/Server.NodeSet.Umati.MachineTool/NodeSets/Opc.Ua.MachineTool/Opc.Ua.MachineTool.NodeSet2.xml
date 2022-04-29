@@ -3040,8 +3040,7 @@ device.</uax:Text>
     <Documentation>https://reference.opcfoundation.org/v104/MachineTool/v100/docs/8.4.2</Documentation>
     <References>
       <Reference ReferenceType="HasOrderedComponent">ns=1;i=74</Reference>
-      <!--<Reference ReferenceType="HasSubtype" IsForward="false">i=23518</Reference>-->
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=23518</Reference>
     </References>
   </UAObjectType>
   <UAObject NodeId="ns=1;i=74" BrowseName="&lt;OrderedObject&gt;" SymbolicName="OrderedObject_Placeholder" ParentNodeId="ns=1;i=30">
@@ -3083,8 +3082,7 @@ device.</uax:Text>
     <References>
       <Reference ReferenceType="HasOrderedComponent">ns=1;i=93</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <!--<Reference ReferenceType="HasTypeDefinition">i=23518</Reference>-->
-      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=23518</Reference>
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=74</Reference>
     </References>
   </UAObject>
@@ -3282,8 +3280,7 @@ device.</uax:Text>
     <References>
       <Reference ReferenceType="HasOrderedComponent">ns=1;i=77</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <!--<Reference ReferenceType="HasTypeDefinition">i=23518</Reference>-->
-      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=23518</Reference>
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=29</Reference>
     </References>
   </UAObject>

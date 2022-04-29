@@ -6,23 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Advanced" Version="3.0.0-preview1-210917" />
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.26.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="NodeSets\Machinetool-Example.xml">
+    <None Update="NodeSets\MachineTool-Example.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NodeSets\Opc.Ua.Di.NodeSet2.xml">
+    <None Update="NodeSets\Opc.Ua.Di\Opc.Ua.Di.NodeSet2.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NodeSets\Opc.Ua.IA.NodeSet2.xml">
+    <None Update="NodeSets\Opc.Ua.IA\Opc.Ua.IA.NodeSet2.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NodeSets\Opc.Ua.Machinery.NodeSet2.xml">
+    <None Update="NodeSets\Opc.Ua.Machinery\Opc.Ua.Machinery.NodeSet2.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NodeSets\Opc.Ua.MachineTool.NodeSet2.xml">
+    <None Update="NodeSets\Opc.Ua.MachineTool\Opc.Ua.MachineTool.NodeSet2.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="umati-instances_EMO2019.xml">

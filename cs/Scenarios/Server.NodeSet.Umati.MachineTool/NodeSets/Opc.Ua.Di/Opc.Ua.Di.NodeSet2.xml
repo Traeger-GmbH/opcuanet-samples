@@ -559,8 +559,7 @@
       <Reference ReferenceType="HasProperty">ns=1;i=15045</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=15046</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=15047</Reference>
-      <!--<Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>-->
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>
     </References>
   </UAObjectType>
   <UAVariable NodeId="ns=1;i=15036" BrowseName="1:Manufacturer" ParentNodeId="ns=1;i=15035" DataType="LocalizedText">
@@ -666,8 +665,7 @@
     <References>
       <Reference ReferenceType="HasProperty">ns=1;i=15049</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=15050</Reference>
-      <!--<Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>-->
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>
     </References>
   </UAObjectType>
   <UAVariable NodeId="ns=1;i=15049" BrowseName="1:AssetId" ParentNodeId="ns=1;i=15048" DataType="String">
@@ -693,8 +691,7 @@
     <References>
       <Reference ReferenceType="HasComponent">ns=1;i=15052</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=15053</Reference>
-      <!--<Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>-->
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>
     </References>
   </UAObjectType>
   <UAVariable NodeId="ns=1;i=15052" BrowseName="1:DeviceHealth" ParentNodeId="ns=1;i=15051" DataType="ns=1;i=6244">
@@ -722,8 +719,7 @@
       <Reference ReferenceType="HasComponent">ns=1;i=15057</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=15059</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=15061</Reference>
-      <!--<Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>-->
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=17602</Reference>
     </References>
   </UAObjectType>
   <UAObject NodeId="ns=1;i=15055" BrowseName="1:DeviceTypeImage" ParentNodeId="ns=1;i=15054">

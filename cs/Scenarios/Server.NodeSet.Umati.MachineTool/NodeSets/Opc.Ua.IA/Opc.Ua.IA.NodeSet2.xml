@@ -1231,8 +1231,7 @@
     <Documentation>https://reference.opcfoundation.org/v104/IA/v101/docs/5.2.1</Documentation>
     <References>
       <Reference ReferenceType="HasOrderedComponent">ns=1;i=5006</Reference>
-      <!--<Reference ReferenceType="HasSubtype" IsForward="false">i=23518</Reference>-->
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=23518</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=5001</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=6009</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=5005</Reference>
@@ -1399,8 +1398,7 @@
       <Reference ReferenceType="HasOrderedComponent">ns=1;i=5004</Reference>
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1007</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <!--<Reference ReferenceType="HasTypeDefinition">i=23518</Reference>-->
-      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=23518</Reference>
     </References>
   </UAObject>
   <UAObject NodeId="ns=1;i=5004" BrowseName="&lt;OrderedObject&gt;" SymbolicName="OrderedObject" ParentNodeId="ns=1;i=5003">

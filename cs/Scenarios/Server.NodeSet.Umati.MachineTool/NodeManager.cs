@@ -1,19 +1,31 @@
 ﻿// Copyright (c) Traeger Industry Components GmbH. All Rights Reserved.
 
-namespace NodeSet
+namespace NodeSet.Umati
 {
-    using System;
     using System.Collections.Generic;
+
     using Opc.UaFx;
     using Opc.UaFx.Server;
 
-    public class NodeManager : OpcNodeManager
+    internal class NodeManager : OpcNodeManager
     {
         #region ---------- Public constructors ----------
 
         public NodeManager()
-            : base("http://yourorganisation.org/MachineTool-Example/")
+            : base(MachineToolExample.Namespace)
         {
+        }
+
+        #endregion
+
+        #region ---------- Public methods ----------
+
+        public MachineToolNode AddMachineTool(string name)
+        {
+            var node = new MachineToolNode(name);
+            this.AddNode(node);
+
+            return node;
         }
 
         #endregion
@@ -22,7 +34,7 @@ namespace NodeSet
 
         protected override IEnumerable<OpcNodeSet> ImportNodes()
         {
-            yield return OpcNodeSet.Load(@".\NodeSets\Machinetool-Example.xml");
+            yield return OpcNodeSet.Load(@".\NodeSets\MachineTool-Example.xml");
         }
 
         #endregion
