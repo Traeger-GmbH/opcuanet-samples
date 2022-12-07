@@ -18,8 +18,8 @@ namespace NodeSet.Umati
         public static void Main(string[] args)
         {
             var umatiNodeManager = OpcNodeSetManager.Create(
-                    OpcNodeSet.Load(@".\NodeSets\Opc.Ua.IA\Opc.Ua.IA.NodeSet2.xml"),
                     OpcNodeSet.Load(@".\NodeSets\Opc.Ua.Di\Opc.Ua.Di.NodeSet2.xml"),
+                    OpcNodeSet.Load(@".\NodeSets\Opc.Ua.IA\Opc.Ua.IA.NodeSet2.xml"),
                     OpcNodeSet.Load(@".\NodeSets\Opc.Ua.Machinery\Opc.Ua.Machinery.NodeSet2.xml"),
                     OpcNodeSet.Load(@".\NodeSets\Opc.Ua.MachineTool\Opc.Ua.MachineTool.NodeSet2.xml"));
 

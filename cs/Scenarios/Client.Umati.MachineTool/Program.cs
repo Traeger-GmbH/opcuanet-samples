@@ -24,6 +24,8 @@ namespace Umati
                         Console.WriteLine(new Guid(alert.EventId).ToString());
                         Console.WriteLine("- Source: {0}", alert.SourceName);
                         Console.WriteLine("- ErrorCode: {0}", alert.ErrorCode);
+
+                        alert.Confirm(client, "Confirmed by John.");
                     }
                 });
 

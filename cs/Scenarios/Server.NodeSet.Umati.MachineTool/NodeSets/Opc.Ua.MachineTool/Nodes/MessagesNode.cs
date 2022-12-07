@@ -2,6 +2,8 @@
 
 namespace NodeSet.Umati
 {
+    using System;
+
     using Opc.UaFx;
     using Opc.UaFx.Server;
 
@@ -66,7 +68,18 @@ namespace NodeSet.Umati
         private void InitializeChildren()
         {
             this.alertsNode = new AlertNode(this, MachineTool.GetName("Alerts"));
+            this.alertsNode.ConfirmCallback = HandleAlertsConfirm;
+
             this.AddChild(OpcContext.Empty, this.alertsNode);
+        }
+
+        private OpcStatusCode HandleAlertsConfirm(
+                OpcNodeContext<OpcConditionNode> context,
+                byte[] eventId,
+                OpcText comment)
+        {
+            Console.WriteLine("Confirmend: " + comment.Value);
+            return OpcStatusCode.Good;
         }
 
         #endregion
