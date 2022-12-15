@@ -21,7 +21,7 @@ namespace Umati
 
                 client.SubscribeEvent(Opc.Ua.ObjectIds.Server, filter, (sender, e) => {
                     if (e.Event is Alert alert) {
-                        Console.WriteLine(new Guid(alert.EventId).ToString());
+                        Console.WriteLine(new Guid(alert.EventId.ToArray()).ToString());
                         Console.WriteLine("- Source: {0}", alert.SourceName);
                         Console.WriteLine("- ErrorCode: {0}", alert.ErrorCode);
 

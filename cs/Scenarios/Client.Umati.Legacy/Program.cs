@@ -16,7 +16,7 @@
 
                 client.SubscribeEvent("ns=3;i=5031", filter, (sender, e) => {
                     if (e.Event is MachineToolAlarmCondition alarm) {
-                        Console.WriteLine(new Guid(alarm.EventId).ToString());
+                        Console.WriteLine(new Guid(alarm.EventId.ToArray()).ToString());
                         Console.WriteLine("- AlarmIdentifier: {0}", alarm.AlarmIdentifier);
                         Console.WriteLine("- AuxParameters: {0}", alarm.AuxParameters);
                     }

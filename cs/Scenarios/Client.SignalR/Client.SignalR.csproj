@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
-    <PackageReference Include="Opc.UaFx.Client" Version="2.23.0" />
+    <PackageReference Include="Opc.UaFx.Client" Version="2.30.0" />
   </ItemGroup>
 
 </Project>
