@@ -8,7 +8,7 @@ namespace DataTypes.Complex
     {
         #region ---------- Public constructors ----------
 
-        public ManufacturingOrderNode(IOpcNode parent, OpcName name, ManufacturingOrder value)
+        public ManufacturingOrderNode(SampleNodeManager nodeManager, IOpcNode parent, OpcName name, ManufacturingOrder value)
             : base(parent, name, value)
         {
             this.Article = this.CreateFieldNode(
@@ -22,6 +22,7 @@ namespace DataTypes.Complex
                     (value) => this.Value.Order = value);
 
             this.Jobs = this.CreateFieldNode(
+                    nodeManager,
                     nameof(ManufacturingOrder.Jobs),
                     () => this.Value.Jobs,
                     (value) => this.Value.Jobs = value,

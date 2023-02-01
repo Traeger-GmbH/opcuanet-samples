@@ -3,7 +3,7 @@
 namespace DataTypes.Complex
 {
     using System;
-    using System.Linq;
+    using System.Collections.Generic;
 
     using Opc.UaFx;
 
@@ -28,6 +28,7 @@ namespace DataTypes.Complex
 
         public static OpcDataVariableNode<T[]> CreateFieldNode<TNode, T>(
                 this IOpcNode parent,
+                SampleNodeManager nodeManager,
                 OpcName name,
                 Func<T[]> getter,
                 Action<T[]> setter,
@@ -37,18 +38,44 @@ namespace DataTypes.Complex
         {
             var fieldNode = new OpcDataVariableNode<T[]>(parent, name);
 
+            var arrayFieldNodes = new List<TNode>();
+
             fieldNode.ReadVariableValueCallback = ReadFieldValue<T[]>;
-            fieldNode.WriteVariableValueCallback = WriteFieldValue<T[]>;
+            fieldNode.WriteVariableValueCallback = (context, value) => {
+                var result = WriteFieldValue<T[]>(context, value);
+
+                lock (nodeManager.SyncRoot) {
+                    // If the array length has changed, we need to add or remove field nodes.
+                    var arrayValue = (T[])value.Value;
+                    while (arrayValue.Length < arrayFieldNodes.Count) {
+                        nodeManager.RemoveNode(arrayFieldNodes[arrayFieldNodes.Count - 1]);
+                        arrayFieldNodes.RemoveAt(arrayFieldNodes.Count - 1);
+                    }
+
+                    while (arrayValue.Length > arrayFieldNodes.Count) {
+                        int itemIndex = arrayFieldNodes.Count;
+                        var newFieldNode = CreateFieldNode(
+                            () => itemConstructor(fieldNode, $"[{itemIndex}]", arrayValue[itemIndex]),
+                            () => getter()[itemIndex],
+                            (value) => getter()[itemIndex] = value);
+
+                        nodeManager.AddNode(newFieldNode);
+                        arrayFieldNodes.Add(newFieldNode);
+                    }
+                }
+
+                return result;
+            };
 
             var value = getter();
 
             for (var index = 0; index < value.Length; index++) {
                 var itemIndex = index;
 
-                CreateFieldNode(
+                arrayFieldNodes.Add(CreateFieldNode(
                         () => itemConstructor(fieldNode, $"[{index}]", value[index]),
                         () => getter()[itemIndex],
-                        (value) => getter()[itemIndex] = value);
+                        (value) => getter()[itemIndex] = value));
             }
 
             fieldNode.Tag = (getter, setter);

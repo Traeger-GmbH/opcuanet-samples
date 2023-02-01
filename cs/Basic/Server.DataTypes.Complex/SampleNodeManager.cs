@@ -11,7 +11,7 @@ namespace DataTypes.Complex
     /// <summary>
     /// Represents a sample implementation of a custom OpcNodeManager.
     /// </summary>
-    internal class SampleNodeManager : OpcNodeManager
+    public class SampleNodeManager : OpcNodeManager
     {
         #region ---------- Public constructors ----------
 
@@ -21,6 +21,29 @@ namespace DataTypes.Complex
         public SampleNodeManager()
             : base("http://sampleserver/machines")
         {
+        }
+
+        #endregion
+
+        #region ---------- Public properties ----------
+
+        public new object SyncRoot
+        {
+            get => base.SyncRoot;
+        }
+
+        #endregion
+
+        #region ---------- Public methods ----------
+
+        public new void AddNode(IOpcNode node)
+        {
+            base.AddNode(node);
+        }
+
+        public new void RemoveNode(IOpcNode node)
+        {
+            base.RemoveNode(node);
         }
 
         #endregion
@@ -76,7 +99,7 @@ namespace DataTypes.Complex
             // Create a custom subclass of OpcDataVariableNode which provide according child nodes
             // for each member of the ManufacturingOrder structure including child nodes for the
             // Jobs member to represent each item in the array using its own subsequent child node.
-            new ManufacturingOrderNode(machineTwo, "Order", new ManufacturingOrder() {
+            new ManufacturingOrderNode(this, machineTwo, "Order", new ManufacturingOrder() {
                 Order = "2020.10.10001",
                 Article = "ART10025",
                 Jobs = new [] {
