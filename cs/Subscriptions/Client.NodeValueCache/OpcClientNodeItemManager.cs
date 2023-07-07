@@ -4,6 +4,7 @@ namespace NodeValueCache
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading;
 
     using Opc.UaFx;
@@ -43,6 +44,17 @@ namespace NodeValueCache
             this.syncRoot = new();
             this.items = new();
             this.itemChanges = new();
+            this.MonitoredItemsPerSubscriptionLimit = 1000;
+        }
+
+        #endregion
+
+        #region ---------- public properties ----------
+
+        public int MonitoredItemsPerSubscriptionLimit
+        {
+            get;
+            set;
         }
 
         #endregion
@@ -188,27 +200,20 @@ namespace NodeValueCache
             using var sleepSemaphore = new SemaphoreSlim(0);
             var itemsDictionary = new Dictionary<NodeItem, OpcMonitoredItem>();
 
-            try {
-                // Create the initial subscription.
-                OpcSubscription subscription;
-                while (true) {
-                    try {
-                        subscription = this.client.SubscribeNodes();
-                        break;
-                    }
-                    catch (Exception ex) when (ex is not OperationCanceledException) {
-                        // Wait a bit and try again.
-                        sleepSemaphore.Wait(1000, cancellationToken);
-                    }
-                }
+            // Create list as store for subscriptions in case the amount of monitoredItems > 1000.
+            List<OpcSubscription> listOfSubscriptions = new List<OpcSubscription>();
 
+            try {
                 while (true) {
                     // Wait for changes.
                     semaphore.Wait(cancellationToken);
 
+                    OpcSubscription subscription = default;
+
                     foreach (var entry in this.itemChanges) {
                         if (entry.added) {
                             var monitoredItem = new OpcMonitoredItem(entry.item.NodeId, Opc.UaFx.OpcAttribute.Value);
+                            var monitoredItemAdded = false;
 
                             monitoredItem.DataChangeReceived += (s, e) => {
                                 // We need to lock first on our syncRoot object and then on the
@@ -226,13 +231,11 @@ namespace NodeValueCache
                                                 entry.item.SyncObject != entry.newSyncObject) {
                                             return;
                                         }
-
                                         // Update the value and raise the event. Updating the
                                         // value needs to be within the lock on the item, as we
                                         // need to acquire it when retrieving the value.
                                         entry.item.ValueCore = e.Item.Value;
                                     }
-
                                     // We raise the event outside of the item's lock, so that the
                                     // current thread can wait for other threads that also try to
                                     // access the item's value.
@@ -242,12 +245,43 @@ namespace NodeValueCache
                                 }
                             };
 
-                            subscription.AddMonitoredItem(monitoredItem);
+                            // Check if subscription already contains 1000 Monitored Items
+                            foreach (var item in listOfSubscriptions) {
+                                if (item.MonitoredItems.Count() < this.MonitoredItemsPerSubscriptionLimit) {
+                                    item.AddMonitoredItem(monitoredItem);
+                                    subscription = item;
+                                    monitoredItemAdded = true;
+                                    break;
+                                }
+                            }
+                            if (!monitoredItemAdded) {
+                                while (true) {
+                                    try {
+                                        subscription = this.client.SubscribeNodes();
+                                        subscription.AddMonitoredItem(monitoredItem);
+                                        listOfSubscriptions.Add(subscription);
+                                        break;
+                                    }
+                                    catch (Exception ex) when (ex is not OperationCanceledException) {
+                                        // Wait a bit and try again.
+                                        sleepSemaphore.Wait(1000, cancellationToken);
+                                    }
+                                }
+                            }
+
                             itemsDictionary.Add(entry.item, monitoredItem);
                         }
                         else {
                             var monitoredItem = itemsDictionary[entry.item];
-                            subscription.RemoveMonitoredItem(monitoredItem);
+
+                            foreach (var item in listOfSubscriptions) {
+                                if (item.MonitoredItems.Contains(monitoredItem)) {
+                                    item.RemoveMonitoredItem(monitoredItem);
+                                    subscription = item;
+                                    break;
+                                }
+                            }
+
                             itemsDictionary.Remove(entry.item);
                         }
                     }
