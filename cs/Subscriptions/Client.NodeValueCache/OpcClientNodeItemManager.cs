@@ -288,7 +288,9 @@ namespace NodeValueCache
 
                     while (true) {
                         try {
-                            subscription.ApplyChanges();
+                            foreach (var item in listOfSubscriptions) {
+                                item.ApplyChanges();
+                            }
                             break;
                         }
                         catch (Exception ex) when (ex is not OperationCanceledException) {
