@@ -4,7 +4,6 @@ namespace NodeValueCache
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading;
 
     using Opc.UaFx;
@@ -201,19 +200,32 @@ namespace NodeValueCache
             var itemsDictionary = new Dictionary<NodeItem, OpcMonitoredItem>();
 
             // Create list as store for subscriptions in case the amount of monitoredItems > 1000.
-            List<OpcSubscription> listOfSubscriptions = new List<OpcSubscription>();
+            var listOfSubscriptions = new List<OpcSubscription>();
+            var touchedSubscriptions = new HashSet<OpcSubscription>();
+
+            // The local list of changes.
+            var localChanges = new List<(NodeItem item, bool added, object? newSyncObject)>();
 
             try {
                 while (true) {
+                    touchedSubscriptions.Clear();
+                    localChanges.Clear();
+
                     // Wait for changes.
                     semaphore.Wait(cancellationToken);
 
-                    OpcSubscription subscription = default;
+                    // Need to copy the changes, so that other threads can continue to
+                    // call methods on the manager.
+                    lock (this.itemChanges) {
+                        localChanges.AddRange(this.itemChanges);
+                        this.itemChanges.Clear();
+                    }
 
-                    foreach (var entry in this.itemChanges) {
+                    foreach (var entry in localChanges) {
+                        OpcSubscription? touchedSubscription = default;
+
                         if (entry.added) {
                             var monitoredItem = new OpcMonitoredItem(entry.item.NodeId, Opc.UaFx.OpcAttribute.Value);
-                            var monitoredItemAdded = false;
 
                             monitoredItem.DataChangeReceived += (s, e) => {
                                 // We need to lock first on our syncRoot object and then on the
@@ -231,11 +243,13 @@ namespace NodeValueCache
                                                 entry.item.SyncObject != entry.newSyncObject) {
                                             return;
                                         }
+
                                         // Update the value and raise the event. Updating the
                                         // value needs to be within the lock on the item, as we
                                         // need to acquire it when retrieving the value.
                                         entry.item.ValueCore = e.Item.Value;
                                     }
+
                                     // We raise the event outside of the item's lock, so that the
                                     // current thread can wait for other threads that also try to
                                     // access the item's value.
@@ -245,21 +259,25 @@ namespace NodeValueCache
                                 }
                             };
 
-                            // Check if subscription already contains 1000 Monitored Items
+                            // Find a subscription that doesn't have reached the maximum number
+                            // of monitored items.
+                            var monitoredItemAdded = false;
+
                             foreach (var item in listOfSubscriptions) {
-                                if (item.MonitoredItems.Count() < this.MonitoredItemsPerSubscriptionLimit) {
+                                if (item.MonitoredItems.Count < this.MonitoredItemsPerSubscriptionLimit) {
                                     item.AddMonitoredItem(monitoredItem);
-                                    subscription = item;
+                                    touchedSubscription = item;
                                     monitoredItemAdded = true;
                                     break;
                                 }
                             }
+
                             if (!monitoredItemAdded) {
                                 while (true) {
                                     try {
-                                        subscription = this.client.SubscribeNodes();
-                                        subscription.AddMonitoredItem(monitoredItem);
-                                        listOfSubscriptions.Add(subscription);
+                                        touchedSubscription = this.client.SubscribeNodes();
+                                        touchedSubscription.AddMonitoredItem(monitoredItem);
+                                        listOfSubscriptions.Add(touchedSubscription);
                                         break;
                                     }
                                     catch (Exception ex) when (ex is not OperationCanceledException) {
@@ -277,25 +295,28 @@ namespace NodeValueCache
                             foreach (var item in listOfSubscriptions) {
                                 if (item.MonitoredItems.Contains(monitoredItem)) {
                                     item.RemoveMonitoredItem(monitoredItem);
-                                    subscription = item;
+                                    touchedSubscription = item;
                                     break;
                                 }
                             }
 
                             itemsDictionary.Remove(entry.item);
                         }
+
+                        // Add the touched subscription if not yet present.
+                        touchedSubscriptions.Add(touchedSubscription!);
                     }
 
-                    while (true) {
-                        try {
-                            foreach (var item in listOfSubscriptions) {
+                    foreach (var item in touchedSubscriptions) {
+                        while (true) {
+                            try {
                                 item.ApplyChanges();
+                                break;
                             }
-                            break;
-                        }
-                        catch (Exception ex) when (ex is not OperationCanceledException) {
-                            // Wait a bit and try again.
-                            sleepSemaphore.Wait(1000, cancellationToken);
+                            catch (Exception ex) when (ex is not OperationCanceledException) {
+                                // Wait a bit and try again.
+                                sleepSemaphore.Wait(1000, cancellationToken);
+                            }
                         }
                     }
 
