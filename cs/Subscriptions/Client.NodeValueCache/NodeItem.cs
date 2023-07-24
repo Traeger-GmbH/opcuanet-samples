@@ -8,6 +8,8 @@ namespace NodeValueCache
 
     public class NodeItem
     {
+        private OpcValue valueForWrite;
+
         #region ---------- Private readonly fields ----------
 
         private readonly OpcNodeId nodeId;
@@ -43,6 +45,24 @@ namespace NodeValueCache
             {
                 lock (this)
                     return this.ValueCore;
+            }
+        }
+
+        public OpcValue? ValueForWrite
+        {
+            get
+            {
+                lock (this)
+                    return this.valueForWrite;
+            }
+            set
+            {
+                lock (this) {
+                    this.valueForWrite = value;
+
+                    // Add an entry in the manger list
+                    this.Manager.Value.
+                }
             }
         }
 

@@ -221,6 +221,9 @@ namespace NodeValueCache
                         this.itemChanges.Clear();
                     }
 
+                    var valuesToWrite = new Dictionary<NodeItem, OpcWriteNode>();
+                    //client.WriteNodes();
+
                     foreach (var entry in localChanges) {
                         OpcSubscription? touchedSubscription = default;
 
@@ -302,6 +305,11 @@ namespace NodeValueCache
 
                             itemsDictionary.Remove(entry.item);
                         }
+                        else  /* 3. Fall: Write Value */ {
+                            lock (entry.Item) {
+                                valuesToWrite[entry.item] = entry.ValueToWrite;
+                            }
+                        }
 
                         // Add the touched subscription if not yet present.
                         touchedSubscriptions.Add(touchedSubscription!);
@@ -317,6 +325,15 @@ namespace NodeValueCache
                                 // Wait a bit and try again.
                                 sleepSemaphore.Wait(1000, cancellationToken);
                             }
+                        }
+                    }
+
+                    if (valuesToWrite.Count > 0) {
+                        try {
+                            this.client.WriteNodes(valuesToWrite.Values);
+                        }
+                        catch (OpcException) {
+                            // TODO, Ingore.
                         }
                     }
 
