@@ -126,7 +126,7 @@ namespace NodeValueCache
             return item;
         }
 
-        
+
         public void AddItem(string key, NodeItem item)
         {
             lock (this.syncRoot) {
@@ -187,6 +187,7 @@ namespace NodeValueCache
                 foreach (var item in this.items) {
                     if (item.Value.ValueForWrite != null) {
                         itemsToWriteList.Add((item.Value, item.Value.ValueForWrite));
+                        item.Value.ValueForWrite = null;
                     }
                 }
 
@@ -242,9 +243,6 @@ namespace NodeValueCache
                         localChanges.AddRange(this.itemChanges);
                         this.itemChanges.Clear();
                     }
-
-                    
-                    //client.WriteNodes();
 
                     foreach (var entry in localChanges) {
                         OpcSubscription? touchedSubscription = default;
@@ -313,8 +311,11 @@ namespace NodeValueCache
                             }
 
                             itemsDictionary.Add(entry.item, monitoredItem);
+
+                            // Add the touched subscription if not yet present.
+                            touchedSubscriptions.Add(touchedSubscription!);
                         }
-                        else if (entry.action == Actions.Remove){
+                        else if (entry.action == Actions.Remove) {
                             var monitoredItem = itemsDictionary[entry.item!];
 
                             foreach (var item in listOfSubscriptions) {
@@ -326,15 +327,17 @@ namespace NodeValueCache
                             }
 
                             itemsDictionary.Remove(entry.item!);
+
+                            // Add the touched subscription if not yet present.
+                            touchedSubscriptions.Add(touchedSubscription!);
                         }
-                        else if(entry.action == Actions.Write) {
-                            foreach (var itemValuePair in (List<(NodeItem nodeItem, OpcValue value)>)entry.itemsToWrite!) {
-                                valuesToWrite[itemValuePair.nodeItem] = new OpcWriteNode(itemValuePair.nodeItem.NodeId, itemValuePair.value);
+                        else if (entry.action == Actions.Write) {
+                            foreach (var itemValuePair in entry.itemsToWrite!) {
+                                // Note: Currently, this may overwrite entries for the same
+                                // item from a previous WriteNodes() call.
+                                valuesToWrite[itemValuePair.item] = new OpcWriteNode(itemValuePair.item.NodeId, itemValuePair.value);
                             }
                         }
-
-                        // Add the touched subscription if not yet present.
-                        touchedSubscriptions.Add(touchedSubscription!);
                     }
 
                     foreach (var item in touchedSubscriptions) {
