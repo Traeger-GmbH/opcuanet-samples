@@ -3,7 +3,7 @@
 namespace NodeValueCache
 {
     using System;
-
+    using Opc.UaFx;
     using Opc.UaFx.Client;
 
     internal static class Program
@@ -24,6 +24,7 @@ namespace NodeValueCache
             };
 
             manager.AddItem("x1", item);
+            manager.WriteValues();
 
             Console.WriteLine("Press key to retrieve cached value...");
 

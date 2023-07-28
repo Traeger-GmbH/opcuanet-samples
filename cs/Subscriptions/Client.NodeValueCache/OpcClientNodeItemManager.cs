@@ -17,7 +17,7 @@ namespace NodeValueCache
 
         private readonly Dictionary<string, NodeItem> items;
 
-        private readonly List<(NodeItem item, bool added, object? newSyncObject)> itemChanges;
+        private readonly List<(NodeItem? item, Actions action, object? newSyncObject, List<(NodeItem item, OpcValue value)>? itemsToWrite)> itemChanges;
 
         private readonly object syncRoot;
 
@@ -126,6 +126,7 @@ namespace NodeValueCache
             return item;
         }
 
+        
         public void AddItem(string key, NodeItem item)
         {
             lock (this.syncRoot) {
@@ -149,7 +150,7 @@ namespace NodeValueCache
                 }
 
                 this.items.Add(key, item);
-                this.itemChanges.Add((item, true, newItemSyncObject));
+                this.itemChanges.Add((item, Actions.Add, newItemSyncObject, null));
 
                 this.workerThreadSemaphore!.Release();
             }
@@ -163,13 +164,33 @@ namespace NodeValueCache
 
                 var item = this.items[key];
 
-                this.itemChanges.Add((item, false, null));
+                this.itemChanges.Add((item, Actions.Remove, null, null));
                 this.items.Remove(key);
 
                 lock (item) {
                     item.Manager = null;
                     item.ValueCore = null;
                 }
+
+                this.workerThreadSemaphore!.Release();
+            }
+        }
+
+        public void WriteValues()
+        {
+            lock (this.syncRoot) {
+                if (this.workerThread is null)
+                    throw new InvalidOperationException();
+
+                var itemsToWriteList = new List<(NodeItem item, OpcValue value)>();
+
+                foreach (var item in this.items) {
+                    if (item.Value.ValueForWrite != null) {
+                        itemsToWriteList.Add((item.Value, item.Value.ValueForWrite));
+                    }
+                }
+
+                this.itemChanges.Add((null, Actions.Write, null, itemsToWriteList));
 
                 this.workerThreadSemaphore!.Release();
             }
@@ -198,13 +219,14 @@ namespace NodeValueCache
         {
             using var sleepSemaphore = new SemaphoreSlim(0);
             var itemsDictionary = new Dictionary<NodeItem, OpcMonitoredItem>();
+            var valuesToWrite = new Dictionary<NodeItem, OpcWriteNode>();
 
             // Create list as store for subscriptions in case the amount of monitoredItems > 1000.
             var listOfSubscriptions = new List<OpcSubscription>();
             var touchedSubscriptions = new HashSet<OpcSubscription>();
 
             // The local list of changes.
-            var localChanges = new List<(NodeItem item, bool added, object? newSyncObject)>();
+            var localChanges = new List<(NodeItem? item, Actions action, object? newSyncObject, List<(NodeItem item, OpcValue value)>? itemsToWrite)>();
 
             try {
                 while (true) {
@@ -221,14 +243,14 @@ namespace NodeValueCache
                         this.itemChanges.Clear();
                     }
 
-                    var valuesToWrite = new Dictionary<NodeItem, OpcWriteNode>();
+                    
                     //client.WriteNodes();
 
                     foreach (var entry in localChanges) {
                         OpcSubscription? touchedSubscription = default;
 
-                        if (entry.added) {
-                            var monitoredItem = new OpcMonitoredItem(entry.item.NodeId, Opc.UaFx.OpcAttribute.Value);
+                        if (entry.action == Actions.Add) {
+                            var monitoredItem = new OpcMonitoredItem(entry.item!.NodeId, Opc.UaFx.OpcAttribute.Value);
 
                             monitoredItem.DataChangeReceived += (s, e) => {
                                 // We need to lock first on our syncRoot object and then on the
@@ -292,8 +314,8 @@ namespace NodeValueCache
 
                             itemsDictionary.Add(entry.item, monitoredItem);
                         }
-                        else {
-                            var monitoredItem = itemsDictionary[entry.item];
+                        else if (entry.action == Actions.Remove){
+                            var monitoredItem = itemsDictionary[entry.item!];
 
                             foreach (var item in listOfSubscriptions) {
                                 if (item.MonitoredItems.Contains(monitoredItem)) {
@@ -303,11 +325,11 @@ namespace NodeValueCache
                                 }
                             }
 
-                            itemsDictionary.Remove(entry.item);
+                            itemsDictionary.Remove(entry.item!);
                         }
-                        else  /* 3. Fall: Write Value */ {
-                            lock (entry.Item) {
-                                valuesToWrite[entry.item] = entry.ValueToWrite;
+                        else if(entry.action == Actions.Write) {
+                            foreach (var itemValuePair in (List<(NodeItem nodeItem, OpcValue value)>)entry.itemsToWrite!) {
+                                valuesToWrite[itemValuePair.nodeItem] = new OpcWriteNode(itemValuePair.nodeItem.NodeId, itemValuePair.value);
                             }
                         }
 
@@ -348,5 +370,13 @@ namespace NodeValueCache
         }
 
         #endregion
+    }
+
+
+    public enum Actions : int
+    {
+        Add = 0,
+        Remove = 1,
+        Write = 2
     }
 }
