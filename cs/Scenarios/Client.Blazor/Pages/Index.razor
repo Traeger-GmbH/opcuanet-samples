@@ -1,0 +1,91 @@
+﻿@page "/"
+@using System.Text;
+@using Microsoft.AspNetCore.Components.Forms
+
+@using Opc.UaFx.Client;
+
+<PageTitle>Client.Blazor</PageTitle>
+
+<h1>Client.Blazor</h1>
+<EditForm Model="@model">
+    <InputText @bind-Value="model.Address" />
+
+    <button class="btn btn-primary" @onclick="Connect">Connect</button>
+    <button class="btn btn-primary" @onclick="Disconnect">Disconnect</button>
+</EditForm>
+
+<p role="status">Status: @clientOutput</p>
+
+<h3>ReadNode</h3>
+<EditForm Model="@model">
+    <InputText @bind-Value="model.NodeId" />
+    <button class="btn btn-primary" @onclick="ReadNodeValue">ReadNodeValue</button>
+</EditForm>
+
+<p role="status">Node Value: @nodeValueOutput</p>
+
+@code {
+    private OpcClient? client;
+    private string? clientOutput;
+    private string? nodeValueOutput;
+
+    public class ClientModel
+    {
+        public string? Address
+        {
+            get;
+            set;
+        }
+
+        public string? NodeId
+        {
+            get;
+            set;
+        }
+    }
+
+    private ClientModel model = new() {
+            Address = "opc.tcp://localhost:4840",
+            NodeId = "NodeId",
+        };
+
+
+    private void Connect()
+    {
+        client = new OpcClient(model.Address);
+
+        try {
+            client.Connect();
+            clientOutput = client.State.ToString();
+        }
+        catch (Exception ex) {
+            clientOutput = ex.Message;
+        }
+    }
+
+    private void Disconnect()
+    {
+        if (client is null) {
+            clientOutput = "Client is not connected.";
+        }
+        else {
+            client.Disconnect();
+            clientOutput = client.State.ToString();
+        }
+    }
+
+    private void ReadNodeValue()
+    {
+        if (client is null) {
+            nodeValueOutput = "Client is not connected.";
+        }
+        else {
+            var value = client.ReadNode(model.NodeId);
+
+            if (value.Status.IsGood)
+                nodeValueOutput = value?.Value?.ToString();
+            else
+                nodeValueOutput = value.Status.Code.ToString();
+        }
+    }
+}
