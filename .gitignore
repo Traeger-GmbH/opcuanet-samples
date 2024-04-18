@@ -348,3 +348,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Ignore wwwroot/lib because folder is deployed by library manager
+/cs/Scenarios/Client.SignalR/wwwroot/lib

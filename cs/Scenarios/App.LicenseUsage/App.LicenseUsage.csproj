@@ -2,7 +2,7 @@
   <Import Condition=" '$(EAZFUSCATOR_NET_HOME)' != '' and Exists('$(EAZFUSCATOR_NET_HOME)\Integration\MSBuild\Eazfuscator.NET.targets') " Project="$(EAZFUSCATOR_NET_HOME)\Integration\MSBuild\Eazfuscator.NET.targets" />
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net46;net471;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net46;net471;net6.0</TargetFrameworks>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   
@@ -14,6 +14,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Advanced" Version="2.30.0" />
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.41.1" />
   </ItemGroup>
 </Project>

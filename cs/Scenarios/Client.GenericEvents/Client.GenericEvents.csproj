@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net46;net471;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net46;net471;net6.0</TargetFrameworks>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Client" Version="2.30.0" />
+    <PackageReference Include="Opc.UaFx.Client" Version="2.41.1" />
   </ItemGroup>
 </Project>
