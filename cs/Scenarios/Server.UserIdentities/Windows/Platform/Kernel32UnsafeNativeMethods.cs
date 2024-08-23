@@ -7,23 +7,17 @@ namespace UserIdentities
     using System.Security;
 
     [SuppressUnmanagedCodeSecurity]
-    internal static class Advapi32UnsafeNativeMethods
+    internal static class Kernel32UnsafeNativeMethods
     {
         #region ---------- Public static methods ----------
 
-        [DllImport("advapi32.dll",
-                EntryPoint = "LogonUserW",
+        [DllImport("kernel32.dll",
+                EntryPoint = "CloseHandle",
                 ExactSpelling = true,
                 CallingConvention = CallingConvention.Winapi,
-                CharSet = CharSet.Unicode,
                 SetLastError = true)]
-        public static extern bool LogonUser(
-                string lpszUsername,
-                string lpszDomain,
-                string lpszPassword,
-                int dwLogonType,
-                int dwLogonProvider,
-                out IntPtr phToken);
+        public static extern bool CloseHandle(
+                IntPtr hObject);
 
         #endregion
     }

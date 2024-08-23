@@ -23,7 +23,14 @@ namespace UserIdentities
             if (!result)
                 throw new Win32Exception(Marshal.GetLastWin32Error());
 
-            return new WindowsIdentity(userToken);
+            try {
+                return new WindowsIdentity(userToken);
+            }
+            finally {
+                // We always need to release the token ourselves, because WindowsIdentity will
+                // have duplicated it.
+                Kernel32UnsafeNativeMethods.CloseHandle(userToken);
+            }
         }
 
         #endregion

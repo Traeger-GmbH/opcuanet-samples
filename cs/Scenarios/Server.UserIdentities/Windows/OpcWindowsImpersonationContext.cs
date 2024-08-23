@@ -3,13 +3,13 @@
 namespace UserIdentities
 {
     using System.Security.Principal;
+
     using Opc.UaFx;
 
     public class OpcWindowsImpersonationContext : OpcImpersonationContext
     {
         #region ---------- Private readonly fields ----------
 
-        private readonly WindowsIdentity identity;
         private readonly WindowsImpersonationContext impersonationContext;
 
         #endregion
@@ -19,8 +19,7 @@ namespace UserIdentities
         internal OpcWindowsImpersonationContext(WindowsIdentity identity)
             : base()
         {
-            this.identity = identity;
-            this.impersonationContext = this.identity.Impersonate();
+            this.impersonationContext = identity.Impersonate();
         }
 
         #endregion
@@ -40,7 +39,6 @@ namespace UserIdentities
         {
             if (disposing) {
                 this.impersonationContext.Dispose();
-                this.identity.Dispose();
             }
         }
 

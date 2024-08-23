@@ -22,12 +22,15 @@ namespace UserIdentities
             using (var server = new OpcServer("opc.tcp://localhost:4840/", someNode)) {
                 var users = server.Security.UserNameAcl;
 
-                // 1. Add the generic users to the UserName-ACL.
-                users.AddEntry(OpcWindowsIdentity.Generic);
+                // 1. Add the generic user (subsystem) to the UserName-ACL.
                 users.AddEntry(OpcSubSystemIdentity.Generic);
 
                 // 2. Activate the UserName-ACL (this inline disables anonymous access).
                 users.IsEnabled = true;
+
+                // 3. Create and add a specialized ACL that implements Windows authentication.
+                var windowsAcl = new OpcWindowsAccessControlList(server);
+                server.Security.AddAccessControlList(windowsAcl);
 
                 server.Start();
 
