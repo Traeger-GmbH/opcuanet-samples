@@ -74,15 +74,15 @@ namespace UserIdentities
 
         public override bool IsOperationAllowed(OpcPrincipal principal, OpcOperationType operation)
         {
-            // Allow all operations. We need to override this as otherwise the base class
-            // method would create and add new ACL entries to its internal list every time
-            // a user logs on.
-            return true;
+            return !this.IsOperationDenied(principal, operation);
         }
 
         public override bool IsOperationDenied(OpcPrincipal principal, OpcOperationType operation)
         {
-            return !this.IsOperationAllowed(principal, operation);
+            // Don't deny operations. We need to override this as otherwise the base class
+            // method would create and add new ACL entries to its internal list every time
+            // a user logs on.
+            return false;
         }
 
         public override bool IsEndpointDisabled(OpcPrincipal principal, OpcEndpointIdentity endpoint)
