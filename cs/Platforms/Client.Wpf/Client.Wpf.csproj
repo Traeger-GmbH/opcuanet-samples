@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net472;net8.0-windows</TargetFrameworks>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <TargetPlatformIdentifier Condition="'$(TargetFramework)' == 'net8.0'">Windows</TargetPlatformIdentifier>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
