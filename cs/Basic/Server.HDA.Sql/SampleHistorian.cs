@@ -224,23 +224,34 @@ namespace HDA.Sql
         }
 
         public IEnumerable<OpcHistoryValue> ReadHistory(
-                OpcContext context,
-                DateTime? startTime,
-                DateTime? endTime,
-                OpcReadHistoryOptions options)
+            OpcContext context,
+            DateTime? startTime,
+            DateTime? endTime,
+            bool timeFlowsBackward,
+            uint? maxCount,
+            OpcReadHistoryOptions options)
         {
+            OpcHistoryValue[] historyValues;
+
             lock (this.syncRoot) {
                 if (options.HasFlag(OpcReadHistoryOptions.Modified)) {
-                    return this.ModifiedHistory
+                    historyValues = this.ModifiedHistory
                             .Enumerate(startTime, endTime)
                             .Cast<OpcHistoryValue>()
                             .ToArray();
                 }
 
-                return this.History
+                historyValues = this.History
                         .Enumerate(startTime, endTime)
                         .ToArray();
             }
+
+            // If timeFlowsBackward is true, we need to reverse the array in order to
+            // return the values in descending order.
+            if (timeFlowsBackward)
+                Array.Reverse(historyValues);
+
+            return historyValues;
         }
 
         public OpcStatusCollection ReplaceHistory(

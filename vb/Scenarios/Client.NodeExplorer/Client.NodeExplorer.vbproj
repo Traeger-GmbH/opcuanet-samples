@@ -121,7 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Opc.UaFx.Client">
-      <Version>2.41.1</Version>
+      <Version>2.51.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
