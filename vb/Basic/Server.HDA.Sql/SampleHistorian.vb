@@ -205,19 +205,31 @@ Namespace HDA.Sql
                 context As OpcContext,
                 startTime As DateTime?,
                 endTime As DateTime?,
+                timeFlowsBackward As Boolean,
+                maxCount As UInteger?,
                 options As OpcReadHistoryOptions) As IEnumerable(Of OpcHistoryValue) Implements IOpcNodeHistoryProvider.ReadHistory
+            Dim historyValues As OpcHistoryValue()
+
             SyncLock Me.syncRoot
                 If options.HasFlag(OpcReadHistoryOptions.Modified) Then
-                    Return Me.ModifiedHistory _
+                    historyValues = Me.ModifiedHistory _
                             .Enumerate(startTime, endTime) _
                             .Cast(Of OpcHistoryValue)() _
                             .ToArray()
                 End If
 
-                Return Me.History _
+                historyValues = Me.History _
                         .Enumerate(startTime, endTime) _
                         .ToArray()
             End SyncLock
+
+            ' If timeFlowsBackward Is true, we need to reverse the array in order to
+            ' return the values in descending order.
+            If timeFlowsBackward Then
+                Array.Reverse(historyValues)
+            End If
+
+            Return historyValues
         End Function
 
         Private Function IOpcNodeHistoryProvider_ReplaceHistory(
