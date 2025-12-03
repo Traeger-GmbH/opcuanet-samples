@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net471;net8.0</TargetFrameworks>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.50.6.2" />
+    <PackageReference Include="Opc.UaFx.Advanced.ISA95" Version="1.0.0-preview.5" />
+    <PackageReference Include="Opc.UaFx.Advanced.ISA95.JobControl" Version="2.0.0-preview.5" />
+    <PackageReference Include="Opc.UaFx.Advanced.Machinery" Version="1.3.0-preview.6" />
+    <PackageReference Include="Opc.UaFx.Advanced.Machinery.Jobs" Version="1.0.1-preview.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NodeSets\MachineTool-Example.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.Di\Opc.Ua.Di.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.IA\Opc.Ua.IA.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.Machinery\Opc.Ua.Machinery.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.MachineTool\Opc.Ua.MachineTool.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="umati-instances_EMO2019.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="umati_EMO2019.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
