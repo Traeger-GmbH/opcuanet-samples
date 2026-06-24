@@ -162,10 +162,12 @@ namespace AE
             // Machine 1, Status nodes setup
             {
                 this.statusNode = new OpcDataVariableNode<byte>(machineOne, "Status", 1);
+                this.statusNode.SymbolicName = "Status";
 
                 // Define an alarm used to request a dialog which requires a dedicated response
                 // action by a client. This kind of node can be used for service / operator tasks.
                 this.statusChangeNode = new OpcDialogConditionNode(machineOne, "StatusChange");
+                this.statusChangeNode.SymbolicName = "StatusChange";
                 this.statusChangeNode.AutoReportChanges = true;
 
                 this.statusChangeNode.Message = "Operator requested";
