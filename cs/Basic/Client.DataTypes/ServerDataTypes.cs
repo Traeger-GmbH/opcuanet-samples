@@ -9,8 +9,8 @@ namespace Opc.UaFx.ServerDataTypes.Machines
 
     [OpcDataTypeAttribute("ns=2;s=MachineJob")]
     [OpcDataTypeEncodingAttribute("ns=2;s=MachineJob.Binary", Type = Opc.UaFx.OpcEncodingType.Binary, NamespaceUri = "http://sampleserver/machines")]
+    [OpcDataTypeEncodingMask(OpcEncodingMaskKind.Auto)]
     [CLSCompliantAttribute(false)]
-    [GeneratedCodeAttribute("OPC Watch by Traeger.de", "2.10.0.0")]
     public class MachineJob
     {
         public string Number
@@ -19,14 +19,8 @@ namespace Opc.UaFx.ServerDataTypes.Machines
             set;
         }
 
-        public bool DurationSpecified
-        {
-            get;
-            set;
-        }
-
-        [OpcDataTypeMemberSwitchAttribute(nameof(DurationSpecified))]
-        public int Duration
+        [OpcDataTypeMemberSwitchAttribute]
+        public int? Duration
         {
             get;
             set;

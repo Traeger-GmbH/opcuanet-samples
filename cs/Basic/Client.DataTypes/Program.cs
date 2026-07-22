@@ -59,8 +59,8 @@ namespace DataTypes
         {
             Console.WriteLine(".Number = {0}", job.Number);
 
-            if (job.DurationSpecified)
-                Console.WriteLine(".Duration = {0} (Estimated = {1})", job.Duration, job.EstimatedDuration);
+            if (job.Duration != null)
+                Console.WriteLine(".Duration = {0} (Estimated = {1})", job.Duration.Value, job.EstimatedDuration);
 
             Console.WriteLine(".In-Process = {0}", job.InProcess);
             Console.WriteLine(".Required-Setup = {0}", (MachineSetup)job.RequiredSetup);
