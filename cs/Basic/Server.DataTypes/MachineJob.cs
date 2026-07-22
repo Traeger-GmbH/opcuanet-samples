@@ -21,7 +21,7 @@ namespace DataTypes
         public Bit DurationSpecified
         {
             get => this.Duration != null;
-            set => this.Duration = value ? (this.Duration ?? 0) : null;
+            set => this.Duration = value ? (int?)(this.Duration ?? 0) : null;
         }
 
         // Additionally, a Bit array must be declared that reserves the (unused)
