@@ -41,8 +41,8 @@ Namespace DataTypes
 
             Dim machines = New OpcFolderNode("Machines")
 
-            'Add new reference to make the node visible beneath the ObjectsFolder
-            '(the top most root node within every OPC UA server).
+            ' Add new reference to make the node visible beneath the ObjectsFolder
+            ' (the top most root node within every OPC UA server).
             references.Add(machines, OpcObjectTypes.ObjectsFolder)
 
             Dim machineOne = New OpcFolderNode(machines, "Machine_1")

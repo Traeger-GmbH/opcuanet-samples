@@ -157,12 +157,14 @@ Namespace AE
 
             'Machine 1, Status nodes setup
             Me.statusNode = New OpcDataVariableNode(Of Byte)(machineOne, "Status", 1)
+            Me.statusNode.SymbolicName = "Status"
 
             'Define an alarm used to request a dialog which requires a dedicated response
             'action by a client. This kind of node can be used for service / operator tasks.
             'Handle any client response on an active dialog through applying the response
             'using RespondDialog And configuring the dialog as inactive.
             Me.statusChangeNode = New OpcDialogConditionNode(machineOne, "StatusChange") With {
+                .SymbolicName = "StatusChange",
                 .AutoReportChanges = True,
                 .Message = "Operator requested",
                 .Prompt = "The job has been finished, continue with the next one?",

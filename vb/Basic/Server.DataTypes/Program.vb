@@ -18,7 +18,7 @@ Namespace DataTypes
                     "opc.tcp://localhost:4840/SampleServer",
                     New SampleNodeManager())
 
-            'NOTE: All DataTypes specific code will be found in the SampleNodeManager.vb.
+            ' NOTE: All DataTypes specific code will be found in the SampleNodeManager.vb.
             server.Start()
 
             Console.Write("Server started...")

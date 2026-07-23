@@ -1,4 +1,4 @@
-'Copyright (c) Traeger Industry Components GmbH. All Rights Reserved.
+' Copyright (c) Traeger Industry Components GmbH. All Rights Reserved.
 
 Imports System
 Imports Opc.UaFx.Client
@@ -19,7 +19,8 @@ Namespace DataTypes
             client.Connect()
 
             '
-            ' The data types used in following lines were generated using the OPC Watch.
+            ' The data types used in following lines were generated using the OPC Watch
+            ' and converted to VB code.
             ' https://docs.traeger.de/en/software/sdk/opc-ua/net/client.development.guide#generate-data-types
             '
 
@@ -51,7 +52,7 @@ Namespace DataTypes
         Private Shared Sub PrintJob(ByVal job As MachineJob)
             Console.WriteLine(".Number = {0}", job.Number)
 
-            If job.DurationSpecified Then
+            If job.Duration.HasValue Then
                 Console.WriteLine(".Duration = {0} (Estimated = {1})", job.Duration, job.EstimatedDuration)
             End If
 

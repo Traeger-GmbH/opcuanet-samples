@@ -7,10 +7,4 @@
   <ItemGroup>
     <PackageReference Include="Opc.UaFx.Advanced" Version="2.51.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ServerDataTypes">
-      <HintPath>ServerDataTypes.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

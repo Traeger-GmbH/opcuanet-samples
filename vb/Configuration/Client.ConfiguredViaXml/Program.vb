@@ -20,15 +20,9 @@ Namespace ConfiguredViaXml
             '''' By default it is not necessary to explicitly configure an OPC UA client. But in case
             '''' of advanced and productive scenarios you will have to.
 
-            ' There are different ways to load the client configuration.
-            Dim configuration As OpcApplicationConfiguration = Nothing
-
-            ' 1st Way: Load client config using a file path.
-            configuration = OpcApplicationConfiguration.LoadClientConfigFile(
+            ' Load client config using a file path.
+            Dim configuration = OpcApplicationConfiguration.LoadClientConfigFile(
                     Path.Combine(Environment.CurrentDirectory, "ClientConfig.xml"))
-
-            ' 2nd Way: Load client config specified in a specific section of your App.config.
-            configuration = OpcApplicationConfiguration.LoadClientConfig("Opc.UaFx.Client")
 
             ' If the server domain name does not match localhost just replace it
             ' e.g. with the IP address or name of the server machine.
@@ -40,14 +34,11 @@ Namespace ConfiguredViaXml
             client.Connect()
             client.Disconnect()
 
-            ' In case you are using the OpcClientApplication class, you can explicitly trigger
-            ' loading a configuration file using the App.config as the following code does
-            ' demonstrate.
+            ' In case you are using the OpcClientApplication class, you can assign the
+            ' loaded client configuration on the client instance used by the application instance,
+            ' as the following code demonstrates.
             Dim app As New OpcClientApplication("opc.tcp://localhost:4840/SampleServer")
-            app.LoadConfiguration()
 
-            ' Alternatively you can assign the manually loaded client configuration on the client
-            ' instance used by the application instance, as the following code does demonstrate.
             app.Client.Configuration = configuration
 
             app.Run()
