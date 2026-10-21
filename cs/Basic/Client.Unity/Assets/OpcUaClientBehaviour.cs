@@ -8,6 +8,10 @@ using UnityEngine.UI;
 using Opc.UaFx;
 using Opc.UaFx.Client;
 
+/// <summary>
+/// This sample demonstrates how to use the OPC UA client in a Unity scene to subscribe to a node of
+/// the Server.Playground sample and show its value.
+/// </summary>
 public class OpcUaClientBehaviour : MonoBehaviour
 {
     private OpcClient client;

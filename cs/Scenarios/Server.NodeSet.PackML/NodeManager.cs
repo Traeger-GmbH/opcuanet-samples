@@ -41,6 +41,11 @@ namespace NodeSet
 
         protected override IEnumerable<OpcNodeSet> ImportNodes()
         {
+            // The data types have to be known before the server starts, otherwise it does not
+            // decode structures which a client passes as method arguments.
+            PackML.Namespace.Resolve(this);
+            PackML.RegisterTypes();
+
             yield return OpcNodeSet.Load(@".\Opc.Ua.PackML.NodeSet2.xml");
         }
 

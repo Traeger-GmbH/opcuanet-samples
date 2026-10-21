@@ -3,6 +3,10 @@
     using System;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how to subscribe to the alarms of a machine tool according to the
+    /// legacy umati information model and read their specific fields.
+    /// </summary>
     public class Program
     {
         public static void Main()

@@ -6,7 +6,9 @@ namespace EventTypes
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// This use case demonstrates how to import and implement custom node types using a nodeset.
+    /// This sample demonstrates how to setup an OPC UA server to provide a custom event type
+    /// defined in a nodeset. Its events carry structured data and are raised when a client calls
+    /// the StartJob method.
     /// </summary>
     public class Program
     {

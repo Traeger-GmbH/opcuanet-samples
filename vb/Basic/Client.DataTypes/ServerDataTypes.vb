@@ -9,7 +9,6 @@ Namespace Global.Opc.UaFx.ServerDataTypes.Machines
     <OpcDataTypeAttribute("ns=2;s=MachineJob")>
     <OpcDataTypeEncodingAttribute("ns=2;s=MachineJob.Binary", Type:=Opc.UaFx.OpcEncodingType.Binary, NamespaceUri:="http://sampleserver/machines")>
     <OpcDataTypeEncodingMask(OpcEncodingMaskKind.Auto)>
-    <CLSCompliantAttribute(False)>
     Public Class MachineJob
         Public Property Number As String
 
@@ -30,7 +29,6 @@ Namespace Global.Opc.UaFx.ServerDataTypes.Machines
 
     <OpcDataTypeAttribute("ns=2;s=ManufacturingOrder")>
     <OpcDataTypeEncodingAttribute("ns=2;s=ManufacturingOrder.Binary", Type:=Opc.UaFx.OpcEncodingType.Binary, NamespaceUri:="http://sampleserver/machines")>
-    <CLSCompliantAttribute(False)>
     <GeneratedCodeAttribute("OPC Watch by Traeger.de", "2.10.0.0")>
     Public Class ManufacturingOrder
         Public Property Article As String
@@ -44,7 +42,6 @@ Namespace Global.Opc.UaFx.ServerDataTypes.Machines
     End Class
 
     <OpcDataTypeAttribute("ns=2;s=MachineStatus")>
-    <CLSCompliantAttribute(False)>
     <GeneratedCodeAttribute("OPC Watch by Traeger.de", "2.10.0.0")>
     Public Enum MachineStatus
         Unknown = 0
@@ -55,7 +52,6 @@ Namespace Global.Opc.UaFx.ServerDataTypes.Machines
     End Enum
 
     <OpcDataTypeAttribute("ns=2;s=MachineSetup")>
-    <CLSCompliantAttribute(False)>
     <GeneratedCodeAttribute("OPC Watch by Traeger.de", "2.10.0.0")>
     Public Enum MachineSetup
         Manual = 0

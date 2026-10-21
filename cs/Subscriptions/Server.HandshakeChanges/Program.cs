@@ -11,7 +11,8 @@ namespace HandshakeChanges
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// 
+    /// This sample demonstrates how to setup an OPC UA server that provides blocks of data using a
+    /// handshake: it signals new data and waits until a client confirms their processing.
     /// </summary>
     [SuppressMessage("Style", "IDE1006:Naming Styles")]
     public class Program

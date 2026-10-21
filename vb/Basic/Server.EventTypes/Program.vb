@@ -5,7 +5,9 @@ Imports Opc.UaFx.Server
 
 Namespace EventTypes
     ''' <summary>
-    ''' This use case demonstrates how to import and implement custom node types using a nodeset.
+    ''' This sample demonstrates how to setup an OPC UA server to provide a custom event type
+    ''' defined in a nodeset. Its events carry structured data and are raised when a client calls
+    ''' the StartJob method.
     ''' </summary>
     Public Class Program
         Public Shared Sub Main(ByVal args As String())

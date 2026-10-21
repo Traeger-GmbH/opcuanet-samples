@@ -5,8 +5,8 @@ Imports Opc.UaFx.Client
 
 Namespace EventTypes
     ''' <summary>
-    ''' This sample demonstrates how to consume structured data types defined and used by
-    ''' the OPC UA server.
+    ''' This sample demonstrates how to subscribe to events of a custom event type and how to access
+    ''' their structured event data through an own event class.
     ''' </summary>
     Public Class Program
         '---------- Public static methods ----------

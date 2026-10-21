@@ -11,6 +11,10 @@ namespace BulkChanges
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This sample demonstrates how to subscribe to a large number of nodes and process their data
+    /// changes in a separate consumer thread.
+    /// </summary>
     [SuppressMessage("Style", "IDE1006:Naming Styles")]
     public class Program
     {

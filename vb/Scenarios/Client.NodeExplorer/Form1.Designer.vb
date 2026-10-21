@@ -20,7 +20,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.nodesImageList = New System.Windows.Forms.ImageList(Me.components)
         Me.tableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.serverAddressTextBox = New System.Windows.Forms.TextBox()
@@ -31,13 +30,9 @@ Partial Class Form1
         '
         'nodesImageList
         '
-        Me.nodesImageList.ImageStream = CType(resources.GetObject("nodesImageList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.nodesImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
+        Me.nodesImageList.ImageSize = New System.Drawing.Size(16, 16)
         Me.nodesImageList.TransparentColor = System.Drawing.Color.Transparent
-        Me.nodesImageList.Images.SetKeyName(0, "ObjectNode.png")
-        Me.nodesImageList.Images.SetKeyName(1, "FolderNode.png")
-        Me.nodesImageList.Images.SetKeyName(2, "MethodNode.png")
-        Me.nodesImageList.Images.SetKeyName(3, "VariableNode.png")
-        Me.nodesImageList.Images.SetKeyName(4, "PropertyNode.png")
         '
         'tableLayoutPanel
         '

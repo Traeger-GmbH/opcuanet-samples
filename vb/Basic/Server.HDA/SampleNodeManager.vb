@@ -53,7 +53,7 @@ Namespace HDA
             references.Add(machineOne, OpcObjectTypes.ObjectsFolder)
 
             Dim name As New OpcDataVariableNode(Of String)(machineOne, "Name", "Machine 1")
-            Dim status As New OpcDataVariableNode(Of Byte)(machineOne, "Status", 1)
+            Dim status As New OpcDataVariableNode(Of Byte)(machineOne, "Status", CByte(1))
 
             Me.positionHistorian = New OpcNodeHistorian( _
                     Me, New OpcDataVariableNode(Of Integer)(machineOne, "Position", -1))

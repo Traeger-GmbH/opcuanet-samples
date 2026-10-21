@@ -40,7 +40,7 @@ Namespace EventTypes
 
         '---------- Private methods ----------
 
-        Private Sub InitializeChildren()
+        Private Overloads Sub InitializeChildren()
             Me.jobNode = New OpcPropertyNode(Of MachineJob)(parent:=Me, name:="1:Job", value:=Nothing)
             Me.AddChild(OpcContext.Empty, Me.jobNode)
         End Sub

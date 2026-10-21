@@ -240,10 +240,11 @@ namespace HDA.Sql
                             .Cast<OpcHistoryValue>()
                             .ToArray();
                 }
-
-                historyValues = this.History
-                        .Enumerate(startTime, endTime)
-                        .ToArray();
+                else {
+                    historyValues = this.History
+                            .Enumerate(startTime, endTime)
+                            .ToArray();
+                }
             }
 
             // If timeFlowsBackward is true, we need to reverse the array in order to

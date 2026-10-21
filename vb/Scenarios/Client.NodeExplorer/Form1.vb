@@ -1,5 +1,9 @@
 ﻿' Copyright (c) Traeger Industry Components GmbH. All Rights Reserved.
 
+Imports System
+Imports System.Drawing
+Imports System.Windows.Forms
+
 Imports Opc.UaFx
 Imports Opc.UaFx.Client
 
@@ -10,6 +14,8 @@ Public Partial Class Form1
         MyBase.New()
         Me.client = New OpcClient()
         Me.InitializeComponent()
+
+        Me.LoadNodeImages()
     End Sub
 
     Protected Overrides Sub OnFormClosing(ByVal e As FormClosingEventArgs)
@@ -104,6 +110,23 @@ Public Partial Class Form1
                 If Not Me.Browse(childNode, treeNodes) Then Exit For
             Next
         End If
+    End Sub
+
+    Private Sub LoadNodeImages()
+        ' The order defines the image indices used by Browse.
+        Dim names = {"ObjectNode", "FolderNode", "MethodNode", "VariableNode", "PropertyNode"}
+        Dim assembly = GetType(Form1).Assembly
+
+        For Each nodeName In names
+            Dim key = nodeName & ".png"
+
+            Using stream = assembly.GetManifestResourceStream("Client.NodeExplorer.Resources." & key)
+                Using nodeImage = Image.FromStream(stream)
+                    ' Image.FromStream needs its stream for the lifetime of the image, so add a copy.
+                    Me.nodesImageList.Images.Add(key, New Bitmap(nodeImage))
+                End Using
+            End Using
+        Next
     End Sub
 
     Private Sub ShowMessage(ByVal caption As String, ByVal text As String)

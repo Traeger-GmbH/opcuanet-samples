@@ -3,6 +3,7 @@
 namespace Client.NodeExplorer
 {
     using System;
+    using System.Drawing;
     using System.Windows.Forms;
 
     using Opc.UaFx;
@@ -18,6 +19,8 @@ namespace Client.NodeExplorer
         {
             this.client = new OpcClient();
             this.InitializeComponent();
+
+            this.LoadNodeImages();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -121,6 +124,23 @@ namespace Client.NodeExplorer
                 foreach (var childNode in node.Children()) {
                     if (!this.Browse(childNode, treeNodes))
                         break;
+                }
+            }
+        }
+
+        private void LoadNodeImages()
+        {
+            // The order defines the image indices used by Browse.
+            var names = new[] { "ObjectNode", "FolderNode", "MethodNode", "VariableNode", "PropertyNode" };
+            var assembly = typeof(Form1).Assembly;
+
+            foreach (var name in names) {
+                var key = name + ".png";
+
+                using (var stream = assembly.GetManifestResourceStream("Client.NodeExplorer.Resources." + key))
+                using (var image = Image.FromStream(stream)) {
+                    // Image.FromStream needs its stream for the lifetime of the image, so add a copy.
+                    this.nodesImageList.Images.Add(key, new Bitmap(image));
                 }
             }
         }

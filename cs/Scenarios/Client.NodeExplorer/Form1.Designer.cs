@@ -28,7 +28,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.nodesImageList = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.serverAddressTextBox = new System.Windows.Forms.TextBox();
@@ -76,13 +75,9 @@
             // 
             // nodesImageList
             // 
-            this.nodesImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("nodesImageList.ImageStream")));
+            this.nodesImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.nodesImageList.ImageSize = new System.Drawing.Size(16, 16);
             this.nodesImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.nodesImageList.Images.SetKeyName(0, "ObjectNode.png");
-            this.nodesImageList.Images.SetKeyName(1, "FolderNode.png");
-            this.nodesImageList.Images.SetKeyName(2, "MethodNode.png");
-            this.nodesImageList.Images.SetKeyName(3, "VariableNode.png");
-            this.nodesImageList.Images.SetKeyName(4, "PropertyNode.png");
             // 
             // nodesTreeView
             // 

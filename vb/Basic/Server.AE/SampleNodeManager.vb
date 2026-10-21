@@ -156,7 +156,7 @@ Namespace AE
             '   the alarm data.
 
             'Machine 1, Status nodes setup
-            Me.statusNode = New OpcDataVariableNode(Of Byte)(machineOne, "Status", 1)
+            Me.statusNode = New OpcDataVariableNode(Of Byte)(machineOne, "Status", CByte(1))
             Me.statusNode.SymbolicName = "Status"
 
             'Define an alarm used to request a dialog which requires a dedicated response
@@ -256,7 +256,7 @@ Namespace AE
             'This will trigger DataChange notification being send to DataChange subscriptions.
             Me.statusNode.ApplyChanges(Me.SystemContext)
 
-            If (Me.statusNode.Value = 45) Then
+            If (Me.statusNode.Value Mod 5 = 0) Then
                 Me.isActiveNode.Value = False
 
                 'This will trigger DataChange notification being send to DataChange subscriptions.

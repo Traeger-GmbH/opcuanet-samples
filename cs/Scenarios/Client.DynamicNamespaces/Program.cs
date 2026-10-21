@@ -7,6 +7,11 @@ namespace DynamicNamespaces
 
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how a client addresses nodes by namespace URI instead of
+    /// namespace index and renews its subscriptions after each reconnect, so it copes with
+    /// namespaces that change on the server.
+    /// </summary>
     public class Program
     {
         private static Dictionary<string, object> Data = new Dictionary<string, object>();

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.57.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NodeSets\Opc.Ua.Di.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Server.SimaticNodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

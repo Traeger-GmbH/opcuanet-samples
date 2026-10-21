@@ -12,6 +12,10 @@ namespace BulkChanges
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This sample demonstrates how to receive data changes of a large number of nodes with minimal
+    /// latency, using a publishing interval of zero and a callback for each data set.
+    /// </summary>
     [SuppressMessage("Style", "IDE1006:Naming Styles")]
     public class Program
     {

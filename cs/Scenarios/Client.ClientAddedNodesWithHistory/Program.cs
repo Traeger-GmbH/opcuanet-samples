@@ -5,6 +5,10 @@
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how a client adds a variable node with history access to the
+    /// server and writes values that the server records as history.
+    /// </summary>
     public class Program
     {
         public static void Main()

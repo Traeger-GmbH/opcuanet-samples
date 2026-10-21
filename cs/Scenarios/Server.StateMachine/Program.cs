@@ -4,6 +4,10 @@
 
     using Opc.UaFx.Server;
 
+    /// <summary>
+    /// This use case demonstrates how to implement a finite state machine node with custom states
+    /// and how the server changes its state.
+    /// </summary>
     public class Program
     {
         public static void Main()

@@ -216,11 +216,11 @@ Namespace HDA.Sql
                             .Enumerate(startTime, endTime) _
                             .Cast(Of OpcHistoryValue)() _
                             .ToArray()
+                Else
+                    historyValues = Me.History _
+                            .Enumerate(startTime, endTime) _
+                            .ToArray()
                 End If
-
-                historyValues = Me.History _
-                        .Enumerate(startTime, endTime) _
-                        .ToArray()
             End SyncLock
 
             ' If timeFlowsBackward Is true, we need to reverse the array in order to

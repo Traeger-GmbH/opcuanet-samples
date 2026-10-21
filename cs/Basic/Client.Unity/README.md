@@ -16,7 +16,7 @@ To get started with the sample you have to assure the following requirements are
 2. Start the Playground Server (./Scenarios/Server.Playground) using
 
 ```shell
-dotnet run --framework netcoreapp3.1
+dotnet run --framework net8.0
 ```
 
 3. Open the 'Client.Unity' project

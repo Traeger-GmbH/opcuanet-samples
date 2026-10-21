@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <RootNamespace></RootNamespace>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.57.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NodeSets\MachineTool-Example.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.Di\Opc.Ua.Di.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.IA\Opc.Ua.IA.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.Machinery\Opc.Ua.Machinery.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NodeSets\Opc.Ua.MachineTool\Opc.Ua.MachineTool.NodeSet2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

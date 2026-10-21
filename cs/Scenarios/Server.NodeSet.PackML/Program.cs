@@ -29,9 +29,6 @@ namespace NodeSet
                 server.ApplicationUri = Namespace.Uri;
                 server.Start();
 
-                PackML.Namespace.Resolve(server);
-                PackML.RegisterTypes();
-
                 // Add some objects.
                 manager.AddObject();
                 manager.AddObject();

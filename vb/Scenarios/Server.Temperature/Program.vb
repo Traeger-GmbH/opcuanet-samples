@@ -4,6 +4,10 @@ Imports Opc.UaFx
 Imports Opc.UaFx.Server
 
 Namespace Server
+    ''' <summary>
+    ''' This sample demonstrates how to setup an OPC UA server that provides a temperature node and
+    ''' updates its value once per second.
+    ''' </summary>
     Public Class Program
         Public Shared Sub Main()
             Dim temperatureNode = New OpcDataVariableNode(Of Double)("Temperature", 100.0)

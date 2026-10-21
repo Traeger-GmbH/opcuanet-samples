@@ -29,7 +29,7 @@ namespace ConfiguredViaXml
 
             // If the client uris domain name does not match localhost just replace it
             // e.g. with the IP address or name of the client machine.
-            var client = new OpcClient("opc.tcp://localhost:4840/SampleClient");
+            var client = new OpcClient("opc.tcp://localhost:4840/SampleServer");
 
             // To take use of the loaded client configuration, just set it on the client instance.
             client.Configuration = configuration;
@@ -40,7 +40,7 @@ namespace ConfiguredViaXml
             // In case you are using the OpcClientApplication class, you can assign the
             // loaded client configuration on the client instance used by the application instance,
             // as the following code demonstrates.
-            var app = new OpcClientApplication("opc.tcp://localhost:4840/SampleClient");
+            var app = new OpcClientApplication("opc.tcp://localhost:4840/SampleServer");
 
             app.Client.Configuration = configuration;
 

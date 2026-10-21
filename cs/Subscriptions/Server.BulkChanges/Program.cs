@@ -11,7 +11,8 @@ namespace BulkChanges
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// 
+    /// This sample demonstrates how to setup an OPC UA server that changes the values of a large
+    /// number of nodes at once in a fixed interval.
     /// </summary>
     [SuppressMessage("Style", "IDE1006:Naming Styles")]
     public class Program

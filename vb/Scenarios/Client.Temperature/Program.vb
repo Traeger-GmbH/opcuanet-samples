@@ -4,6 +4,10 @@ Imports System.Threading
 Imports Opc.UaFx.Client
 
 Namespace Client
+    ''' <summary>
+    ''' This sample demonstrates how to connect to an OPC UA server and read the value of a node
+    ''' once per second.
+    ''' </summary>
     Public Class Program
         Public Shared Sub Main()
             Using client = New OpcClient("opc.tcp://localhost:4840")

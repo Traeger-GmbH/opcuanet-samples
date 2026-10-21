@@ -9,8 +9,8 @@ namespace Localization
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// This use case realizes restricted node access using built-in ACL functionality and
-    /// subclassing for user dependent node metadata.
+    /// This use case demonstrates how to provide display names and descriptions of nodes in several
+    /// languages using the globalization resources of the server.
     /// </summary>
     public class Program
     {

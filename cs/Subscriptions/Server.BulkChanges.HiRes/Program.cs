@@ -11,7 +11,8 @@ namespace BulkChanges
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// 
+    /// This sample demonstrates how to configure an OPC UA server for high resolution publishing,
+    /// to deliver changes of a large number of nodes in intervals of a few milliseconds.
     /// </summary>
     [SuppressMessage("Style", "IDE1006:Naming Styles")]
     public class Program

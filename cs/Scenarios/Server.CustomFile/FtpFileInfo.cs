@@ -135,7 +135,11 @@ namespace CustomFile
                 this.response?.Dispose();
                 this.response = null;
 
+                // .NET offers no successor to FtpWebRequest, and the sample avoids a third party
+                // FTP library.
+#pragma warning disable SYSLIB0014
                 if (WebRequest.Create(this.path) is FtpWebRequest request) {
+#pragma warning restore SYSLIB0014
                     request.Credentials = this.credentials;
                     request.Method = WebRequestMethods.Ftp.DownloadFile;
 

@@ -5,6 +5,10 @@
 
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This sample demonstrates how to connect to an OPC UA server and read the value of a node
+    /// once per second.
+    /// </summary>
     public class Program
     {
         public static void Main()

@@ -18,10 +18,8 @@ namespace LicenseUsage
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// This use case demonstrates how to use a license key in a secure way using "string
-    /// encryption" when obfuscating your application. To do so we are using the Eazfuscator from
-    /// Gapotchenko. Depending on which obfuscator you want to use the configuration might be
-    /// slightly different. Please refer to your obfuscators documentation for "string encryption".
+    /// This sample demonstrates how to apply the license keys of the SDK and how to protect them by
+    /// string encryption when the application is obfuscated, here using Eazfuscator.NET.
     /// </summary>
     /// <remarks>The Eazfuscator is part of the projects configuration and is executed whenever
     /// this project is build using the "Release" configuration.</remarks>

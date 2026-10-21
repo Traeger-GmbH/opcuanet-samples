@@ -9,8 +9,8 @@ namespace DynamicNodeManagers
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// This use case realizes dynamic nodes which are created on-demand by the server depending
-    /// on the underlying system needs.
+    /// This use case demonstrates how to provide each namespace through its own node manager and
+    /// how to restart the server with a different selection of node managers.
     /// </summary>
     public class Program
     {

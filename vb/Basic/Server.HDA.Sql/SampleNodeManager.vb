@@ -73,7 +73,7 @@ Namespace HDA.Sql
             references.Add(machineOne, OpcObjectTypes.ObjectsFolder)
 
             Dim nameNode = New OpcDataVariableNode(Of String)(machineOne, "Name", "Machine 1")
-            Dim statusNode = New OpcDataVariableNode(Of Byte)(machineOne, "Status", 1)
+            Dim statusNode = New OpcDataVariableNode(Of Byte)(machineOne, "Status", CByte(1))
             Dim isActiveNode = New OpcDataVariableNode(Of Boolean)(machineOne, "IsActive", True)
 
             Me._positionHistorian = New SampleHistorian(

@@ -64,7 +64,7 @@ Namespace Client.Wpf
 
         Public ReadOnly Property AddressIsValid As Boolean
             Get
-                Return Me.address IsNot Nothing
+                Return Me._address IsNot Nothing
             End Get
         End Property
 
@@ -87,7 +87,7 @@ Namespace Client.Wpf
                 Me.RaisePropertyChanging(NameOf(Me.NodeId))
                 Me.RaisePropertyChanging(NameOf(Me.NodeIdIsValid))
 
-                Dim result = Nothing
+                Dim result As OpcNodeId = Nothing
 
                 If OpcNodeId.TryParse(value, result) Then
                     Me._nodeId = result
@@ -137,18 +137,22 @@ Namespace Client.Wpf
         Public Sub Subscribe()
             Try
                 If Me._client Is Nothing Then
-                    Me._client = New OpcClient(Me.Address)
+                    Me._client = New OpcClient(Me._address)
                     Me._client.Connect()
                 End If
 
                 If Me._subscription IsNot Nothing Then Me._subscription.Unsubscribe()
 
                 Me._subscription = Me._client.SubscribeDataChange(
-                        Me.NodeId,
+                        Me._nodeId,
                         AddressOf Me.HandleDataChangeReceived)
 
                 Dim monitoredItem = Me._subscription.MonitoredItems(0)
-                Me.NodeStatus = monitoredItem.Status.[Error].Description
+                Dim monitoredItemStatus = monitoredItem.Status
+
+                If monitoredItemStatus.Error IsNot Nothing Then
+                    Me.NodeStatus = monitoredItemStatus.Error.Description
+                End If
             Catch ex As Exception
                 Me.NodeStatus = ex.Message
             End Try

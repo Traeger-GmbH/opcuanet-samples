@@ -3,6 +3,10 @@
     using System;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how a client monitors the current state of a state machine
+    /// provided by the server.
+    /// </summary>
     public class Program
     {
         public static void Main()

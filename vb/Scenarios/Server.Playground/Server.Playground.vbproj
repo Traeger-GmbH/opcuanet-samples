@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <OptionStrict>On</OptionStrict>
+    <!-- The randomizers and methods rely on wrapping integer arithmetic like C# (unchecked). -->
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.57.0" />
+  </ItemGroup>
+</Project>

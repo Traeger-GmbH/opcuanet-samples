@@ -1,12 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetFrameworks>net472;net8.0-windows</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Client" Version="2.54.1" />
+    <PackageReference Include="Opc.UaFx.Client" Version="2.57.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ObjectNode.png" LogicalName="Client.NodeExplorer.Resources.ObjectNode.png" />
+    <EmbeddedResource Include="Resources\FolderNode.png" LogicalName="Client.NodeExplorer.Resources.FolderNode.png" />
+    <EmbeddedResource Include="Resources\MethodNode.png" LogicalName="Client.NodeExplorer.Resources.MethodNode.png" />
+    <EmbeddedResource Include="Resources\VariableNode.png" LogicalName="Client.NodeExplorer.Resources.VariableNode.png" />
+    <EmbeddedResource Include="Resources\PropertyNode.png" LogicalName="Client.NodeExplorer.Resources.PropertyNode.png" />
   </ItemGroup>
 </Project>

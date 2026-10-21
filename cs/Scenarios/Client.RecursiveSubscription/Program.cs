@@ -7,6 +7,10 @@
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how a client adds job nodes below a monitored node and receives
+    /// the events the server raises for each added node.
+    /// </summary>
     public class Program
     {
         public static void Main()

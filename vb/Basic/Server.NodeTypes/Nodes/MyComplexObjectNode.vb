@@ -55,7 +55,7 @@ Namespace NodeTypes
 
 #Region "---------- Private methods ----------"
 
-        Private Sub InitializeChildren()
+        Private Overloads Sub InitializeChildren()
             Me._firstNode = New MySimpleVariableNode(
                     parent:=Me,
                     name:="1:First",

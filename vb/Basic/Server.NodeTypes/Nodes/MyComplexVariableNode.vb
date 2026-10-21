@@ -78,7 +78,7 @@ Namespace NodeTypes
 
 #Region "---------- Private methods ----------"
 
-        Private Sub InitializeChildren(ByVal mandatoryValue As String, ByVal optionalValue As Integer)
+        Private Overloads Sub InitializeChildren(ByVal mandatoryValue As String, ByVal optionalValue As Integer)
             Me._mandatoryValueNode = New OpcDataVariableNode(Of String)(
                     parent:=Me,
                     name:="1:MandatoryValue",

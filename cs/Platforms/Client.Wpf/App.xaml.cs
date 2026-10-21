@@ -9,7 +9,8 @@ using System.Windows;
 namespace Client.Wpf
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// This sample demonstrates how to use the OPC UA client in a WPF application to subscribe to a
+    /// node and show its value.
     /// </summary>
     public partial class App : Application
     {

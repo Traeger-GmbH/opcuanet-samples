@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Advanced" Version="2.54.1" />
+    <None Remove="MyNodeSet.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyNodeSet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Opc.UaFx.Advanced" Version="2.57.0" />
   </ItemGroup>
 </Project>

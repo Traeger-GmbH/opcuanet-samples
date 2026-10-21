@@ -160,7 +160,7 @@ Namespace AE
             ' In general event handling can be implemented here, too. The approach of this sample
             ' takes use of the nodes collection to summarize the received information to process
             ' it all in one run to simplify the handling of the console out- and input.
-            Dim nodeId = e.Event.SourceNodeId.ToString(OpcNodeIdFormat.Foundation)
+            Dim nodeId = e.Event.SourceNodeId?.ToString(OpcNodeIdFormat.Foundation)
 
             If (Not nodeId Is Nothing) Then
                 If (nodes.Contains(nodeId)) Then
@@ -327,7 +327,7 @@ Namespace AE
             If (Not eventData Is Nothing) Then
                 Dim conditionData = TryCast(node.EventData, OpcCondition)
 
-                If (conditionData Is Nothing Or conditionData.IsRetained) Then
+                If (conditionData Is Nothing OrElse conditionData.IsRetained) Then
                     Console.ForegroundColor = SeverityToColor(eventData.Severity)
                 Else
                     Console.ForegroundColor = ConsoleColor.DarkGray

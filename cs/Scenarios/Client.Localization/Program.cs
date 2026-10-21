@@ -7,6 +7,10 @@ namespace Localization
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how a client requests localized display names and descriptions by
+    /// specifying its preferred locales.
+    /// </summary>
     public class Program
     {
         public static void Main()

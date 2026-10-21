@@ -9,6 +9,10 @@ namespace GenericEvents
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how to receive events of a custom event type without an own class
+    /// for its fields, using a generic event class that exposes all selected event fields.
+    /// </summary>
     public class Program
     {
         public static void Main()

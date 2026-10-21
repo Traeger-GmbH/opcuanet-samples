@@ -6,10 +6,10 @@ namespace SimaticNodeSet
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// This use case demonstrates how to define a custom server which can be used to simulate a
-    /// "SIEMENS SIMATIC OPC UA Server" using a once exported information model (= nodeset).
+    /// This use case demonstrates how to setup an OPC UA server that imports the nodeset of a
+    /// SIMATIC S7-1500 controller and identifies itself like the server of the controller, e.g. to
+    /// test clients without the hardware.
     /// </summary>
-    /// <remarks>This implementation provides only a frame to start with the development.</remarks>
     public class Program
     {
         #region ---------- Public static methods ----------

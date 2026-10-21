@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Traeger Industry Components GmbH. All Rights Reserved.
 
-namespace BulkChanges
+namespace SignalR
 {
     using System;
     using System.Collections.Generic;
@@ -11,7 +11,9 @@ namespace BulkChanges
     using Opc.UaFx.Server;
 
     /// <summary>
-    /// 
+    /// This use case demonstrates how to setup an OPC UA server whose node values change
+    /// periodically. It provides the nodes that the Client.SignalR sample forwards to the web
+    /// browser.
     /// </summary>
     [SuppressMessage("Style", "IDE1006:Naming Styles")]
     public class Program

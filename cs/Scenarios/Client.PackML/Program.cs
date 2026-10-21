@@ -6,6 +6,10 @@
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how to call a method of the PackML companion specification with
+    /// structured arguments, using data types generated from the PackML nodeset.
+    /// </summary>
     public class Program
     {
         public static void Main()

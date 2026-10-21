@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net472;net8.0</TargetFrameworks>
-    <TargetPlatformIdentifier Condition="'$(TargetFramework)' == 'net8.0'">Windows</TargetPlatformIdentifier>
+    <TargetFrameworks>net472;net8.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Opc.UaFx.Client" Version="2.54.1" />
+    <PackageReference Include="Opc.UaFx.Client" Version="2.57.0" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,6 @@ namespace Opc.UaFx.ServerDataTypes.Machines
     [OpcDataTypeAttribute("ns=2;s=MachineJob")]
     [OpcDataTypeEncodingAttribute("ns=2;s=MachineJob.Binary", Type = Opc.UaFx.OpcEncodingType.Binary, NamespaceUri = "http://sampleserver/machines")]
     [OpcDataTypeEncodingMask(OpcEncodingMaskKind.Auto)]
-    [CLSCompliantAttribute(false)]
     public class MachineJob
     {
         public string Number
@@ -60,7 +59,6 @@ namespace Opc.UaFx.ServerDataTypes.Machines
 
     [OpcDataTypeAttribute("ns=2;s=ManufacturingOrder")]
     [OpcDataTypeEncodingAttribute("ns=2;s=ManufacturingOrder.Binary", Type = Opc.UaFx.OpcEncodingType.Binary, NamespaceUri = "http://sampleserver/machines")]
-    [CLSCompliantAttribute(false)]
     [GeneratedCodeAttribute("OPC Watch by Traeger.de", "2.10.0.0")]
     public class ManufacturingOrder
     {
@@ -91,7 +89,6 @@ namespace Opc.UaFx.ServerDataTypes.Machines
     }
 
     [OpcDataTypeAttribute("ns=2;s=MachineStatus")]
-    [CLSCompliantAttribute(false)]
     [GeneratedCodeAttribute("OPC Watch by Traeger.de", "2.10.0.0")]
     public enum MachineStatus
     {
@@ -103,7 +100,6 @@ namespace Opc.UaFx.ServerDataTypes.Machines
     }
 
     [OpcDataTypeAttribute("ns=2;s=MachineSetup")]
-    [CLSCompliantAttribute(false)]
     [GeneratedCodeAttribute("OPC Watch by Traeger.de", "2.10.0.0")]
     public enum MachineSetup
     {

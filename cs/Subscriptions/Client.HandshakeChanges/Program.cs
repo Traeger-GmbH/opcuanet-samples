@@ -11,6 +11,10 @@ namespace HandshakeChanges
     using Opc.UaFx;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This sample demonstrates how a client reads a block of data as soon as the server signals it
+    /// as available and confirms its processing through a handshake node.
+    /// </summary>
     [SuppressMessage("Style", "IDE1006:Naming Styles")]
     public class Program
     {

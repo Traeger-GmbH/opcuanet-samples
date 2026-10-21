@@ -5,6 +5,10 @@ namespace Umati
     using System;
     using Opc.UaFx.Client;
 
+    /// <summary>
+    /// This use case demonstrates how to receive and confirm alerts of a machine tool according to
+    /// the OPC UA companion specification for machine tools (umati).
+    /// </summary>
     public class Program
     {
         public static void Main()
@@ -25,7 +29,7 @@ namespace Umati
                         Console.WriteLine("- Source: {0}", alert.SourceName);
                         Console.WriteLine("- ErrorCode: {0}", alert.ErrorCode);
 
-                        alert.Confirm(client, "Confirmed by John.");
+                        alert.Confirm(client, "Confirmed by the operator.");
                     }
                 });
 

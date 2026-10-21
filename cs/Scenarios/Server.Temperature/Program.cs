@@ -5,6 +5,10 @@
     using Opc.UaFx;
     using Opc.UaFx.Server;
 
+    /// <summary>
+    /// This sample demonstrates how to setup an OPC UA server that provides a temperature node and
+    /// updates its value once per second.
+    /// </summary>
     public class Program
     {
         public static void Main()
